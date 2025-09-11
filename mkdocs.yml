@@ -1,0 +1,65 @@
+site_name: Zudar Docs
+site_description: Гайды по ОС, Arch Linux и прочим радостям жизни
+site_url: https://zudaR107.github.io/guides/
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+  icon:
+    repo: fontawesome/brands/github
+
+repo_url: https://github.com/zudaR107/guides
+edit_uri: edit/main/docs/
+
+nav:
+  - Главная: index.md
+  - ОС:
+      - Загрузочная флешка: os/bootable-usb.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - social
+
+extra:
+  social:
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/vrubovoy
+    - icon: fontawesome/brands/github
+      link: https://github.com/zudaR107

@@ -10,22 +10,26 @@
       
       
       
+        <link rel="canonical" href="https://docs.zudar.ru/os/ventoy/">
+      
+      
+        <link rel="prev" href="../bootable-usb/">
       
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
-        <title>ZudaR Docs</title>
+        <title>Ventoy - ZudaR Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,11 +48,37 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Ventoy - ZudaR Docs" >
+      
+        <meta  property="og:description"  content="Гайды по ОС, Arch Linux и прочим радостям жизни" >
+      
+        <meta  property="og:image"  content="https://docs.zudar.ru/assets/images/social/os/ventoy.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://docs.zudar.ru/os/ventoy/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Ventoy - ZudaR Docs" >
+      
+        <meta  name="twitter:description"  content="Гайды по ОС, Arch Linux и прочим радостям жизни" >
+      
+        <meta  name="twitter:image"  content="https://docs.zudar.ru/assets/images/social/os/ventoy.png" >
+      
     
     
   </head>
@@ -69,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#2-ventoy" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +116,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="/." title="ZudaR Docs" class="md-header__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+    <a href="../.." title="ZudaR Docs" class="md-header__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Ventoy
             
           </span>
         </div>
@@ -219,7 +254,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="ZudaR Docs" class="md-nav__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+    <a href="../.." title="ZudaR Docs" class="md-nav__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -249,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -268,8 +303,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -280,13 +317,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -302,7 +337,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Операционные системы
@@ -316,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/os/bootable-usb/" class="md-nav__link">
+      <a href="../bootable-usb/" class="md-nav__link">
         
   
   
@@ -336,10 +371,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/os/ventoy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ventoy
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -350,6 +407,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      План действий
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что в итоге
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -374,8 +469,140 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+    <a href="https://github.com/zudaR107/guides/edit/main/docs/os/ventoy.md" title="Редактировать страницу" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="2-ventoy">Операционные системы. Часть 2 — «Ventoy» 🚀<a class="headerlink" href="#2-ventoy" title="Permanent link">&para;</a></h1>
+<p>В прошлой статье мы сделали загрузочную флешку, успешно воткнули её в комп коллеге и слегка подорвали его веру в «только GUI и ничего больше» 😏</p>
+<p>Но ладно, пора и совесть включить — вернём человеку «винду». И сделаем это красиво: не одна система на весь носитель, а <strong>Ventoy</strong> с кучей ISO на одной флешке. Ну серьёзно, занимать 64 ГБ одним образом (да ещё и &lt; 2 ГБ) — несолидно 🙃</p>
+<p><strong>Ventoy</strong> — бесплатная утилита с открытым исходным кодом, которая делает USB‑накопитель загрузочным так, что вы просто копируете на него <strong>ISO / WIM / IMG / VHD(x) / EFI</strong>‑файлы, а потом выбираете нужный в меню. Красота ❤️</p>
+<hr />
+<h2 id="_1">План действий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Идём в Windows и берём нашу флешку.</strong>
+   Форматируем как обычно. Тут ничего нового.</p>
+</li>
+<li>
+<p><strong>ISO Arch Linux</strong> у нас уже есть с прошлой статьи.
+   Если нет — скачайте заранее. (И да, <strong>Arch Wiki</strong> — это святое 🔥)</p>
+</li>
+<li>
+<p><strong>Достать ISO Windows.</strong>
+   И вот тут начинаются пляски… Примерно с 2022 года Microsoft ограничила скачивание образов для жителей нашей великой державы. Поэтому «просто с сайта» — не прокатывает даже с использованием трех букв 😑</p>
+</li>
+</ol>
+<p><img alt="Ошибка при скачивании ISO" src="../../images/os/ventoy/microsoft_not_work.png" /></p>
+<p>Качать с торрентов? Я не фанат (даже рутрекеру тут не доверяю) — слишком много мусора. Ищем официальный способ.</p>
+<ol>
+<li><strong>Media Creation Tool — наше всё.</strong>
+   Это фирменная утилита от Microsoft, которая готовит загрузочные образы Windows 10/11 напрямую с их серверов и без ключа продукта. Но сама по себе она тоже недоступна в нашей стране. Выручают ребята с GitHub:</li>
+</ol>
+<p>👉 Репозиторий: <a href="https://github.com/AveYo/MediaCreationTool.bat">https://github.com/AveYo/MediaCreationTool.bat</a></p>
+<p>Нажимаем <strong>Code → Download ZIP</strong>, скачиваем архив и распаковываем куда удобно.</p>
+<p><img alt="Содержимое папки" src="../../images/os/ventoy/media_creation_tool_bat.png" /></p>
+<blockquote>
+<p>⚠️ Дальше по-хорошему пригодятся «три буквы» (вы поняли какие). Гайда по ним <strong>не будет</strong> — современные реалии такие. Работает ли батник без них именно у вас — проверяйте.</p>
+</blockquote>
+<ol>
+<li><strong>Запускаем скрипт.</strong>
+   Открываем <code>MediaCreationTool.bat</code> из распакованной папки.</li>
+</ol>
+<p><img alt="Запущенный скрипт" src="../../images/os/ventoy/started_bat.png" /></p>
+<ol>
+<li><strong>Windows 10:</strong> выбираем <strong>22H2</strong> — она до сих пор максимально стабильная и удобная, как по мне. Эх, жаль, что поддержка не вечна 🥲</li>
+</ol>
+<p><img alt="22H2" src="../../images/os/ventoy/22h2.png" /></p>
+<ol>
+<li>Жмём <strong>Auto ISO</strong>. Скрипт сам запустит скачивание в стандартную папку (обычно диск <code>C:</code>), если вы запускали его прямо из архива; либо внутрь распакованной папки. Просто ждём… ⏳</li>
+</ol>
+<p><img alt="Скачивание ISO Windows 10 22H2" src="../../images/os/ventoy/download_win10.png" /></p>
+<p><img alt="Продолжение скачивания" src="../../images/os/ventoy/continue_download_win10.png" /></p>
+<p><img alt="Завершение скачивания" src="../../images/os/ventoy/end_download_win10.png" /></p>
+<ol>
+<li><strong>Windows 11:</strong> делаем аналогично. Снова запускаем скрипт и выбираем последнюю <strong>11_23H2</strong> → <strong>Auto ISO</strong> → ждём.</li>
+</ol>
+<p><img alt="Запущенный скрипт" src="../../images/os/ventoy/started_bat.png" /></p>
+<p><img alt="Скачивание ISO Windows 11 23H2" src="../../images/os/ventoy/download_win11.png" /></p>
+<ol>
+<li>В итоге у нас на диске лежат <strong>два ISO</strong>: Windows 10 (22H2) и Windows 11 (23H2).
+   <img alt="Скачанные образы Windows" src="../../images/os/ventoy/iso_win_10_11.png" /></li>
+</ol>
+<p>По времени это заняло около <strong>30 минут</strong> (оба образа). У вас может быть быстрее/дольше — как повезёт с каналом ⚡</p>
+<ol>
+<li>
+<p>Теперь у нас есть <strong>три ISO</strong>: Arch Linux, Windows 10 22H2 и Windows 11 23H2. </p>
+<p>Пора за Ventoy: 👉 <a href="https://ventoy.net">https://ventoy.net</a></p>
+<p>Заходим в <strong>Downloads</strong>, скачиваем ZIP‑архив, распаковываем.</p>
+</li>
+<li>
+<p><strong>Запускаем <code>Ventoy2Disk.exe</code>.</strong></p>
+<p><img alt="Содержимое Ventoy" src="../../images/os/ventoy/ventoy_entries.png" /></p>
+</li>
+<li>
+<p><strong>Выбираем нужную флешку</strong> → жмём <strong>Install</strong> → ждём.</p>
+<p><img alt="Содержимое Ventoy" src="../../images/os/ventoy/ventoy_started.png" /></p>
+<blockquote>
+<p>⚠️ Важно: Ventoy <strong>переразобьёт</strong> носитель под себя. Всё, что было на флешке, улетит в космос. Проверьте, что выбрана <strong>правильная</strong> буква диска. Не будьте как я 🤡</p>
+</blockquote>
+</li>
+<li>
+<p>После установки флешка будет подписана как <strong>Ventoy</strong> — значит всё ок ✅</p>
+<p><img alt="Наша флешка" src="../../images/os/ventoy/ventoy_completed.png" /></p>
+</li>
+<li>
+<p><strong>Копируем все три ISO на флешку.</strong> Просто перетаскиваем файлы — никаких «записей образов», «магии» и прочего шаманства.</p>
+<p><img alt="Содержимое флешки" src="../../images/os/ventoy/ventoy_usb.png" /></p>
+<p>Это заняло ещё минут 30 🙂 Обратите внимание на общий объём — ISO‑шники винды оочень толстые.</p>
+</li>
+<li>
+<p><strong>Перезагружаемся и грузимся с флешки</strong> (см. прошлую статью про выбор Boot Menu).
+    Перед нами меню Ventoy:</p>
+<p><img alt="Меню Ventoy" src="../../images/os/ventoy/ventoy_menu.jpg" /></p>
+<p>Тут уж извините — скриншот нормально сделать нельзя ¯\<em>(ツ)</em>/¯</p>
+</li>
+<li>
+<p><strong>Тестируем запуск каждого образа.</strong></p>
+<p><strong>Arch Linux:</strong></p>
+<p><img alt="Установщик Arch Linux" src="../../images/os/ventoy/archinstall.png" /></p>
+<p><strong>Windows 10 22H2:</strong></p>
+<p><img alt="Установщик Windows 10" src="../../images/os/ventoy/win10setup.png" /></p>
+<p><strong>Windows 11 23H2:</strong></p>
+<p><img alt="Установщик Windows 11" src="../../images/os/ventoy/win11setup.png" /></p>
+<p>Всё стартует — красота! 🎯</p>
+</li>
+</ol>
+<hr />
+<h2 id="_2">Что в итоге<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Теперь у нас <strong>универсальная флешка</strong>: и Linux поставить, и «винду» вернуть, и вообще выглядеть как человек, который думает на шаг вперёд 😉
+Ventoy — вещь, которую я таскаю с собой всегда. 
+Еще можно закинуть на неё других дистрибутивов (например, Debian) — пусть будет богатый выбор.</p>
+<p><strong>Всем добра!</strong> Установка Arch Linux — в следующей статье 🖤🐧</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -438,10 +665,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>

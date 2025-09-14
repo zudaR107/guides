@@ -36,8 +36,9 @@ edit_uri: edit/main/docs/
 
 nav:
   - Главная: index.md
-  - ОС:
+  - Операционные системы:
       - Загрузочная флешка: os/bootable-usb.md
+      - Ventoy: os/ventoy.md
 
 markdown_extensions:
   - admonition

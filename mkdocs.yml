@@ -39,6 +39,7 @@ nav:
   - Операционные системы:
       - Загрузочная флешка: os/bootable-usb.md
       - Ventoy: os/ventoy.md
+      - Установка Arch Linux: os/arch-install.md
 
 markdown_extensions:
   - admonition

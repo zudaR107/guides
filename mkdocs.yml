@@ -6,7 +6,6 @@ theme:
   name: material
   language: ru
   features:
-    - navigation.instant
     - navigation.tracking
     - navigation.sections
     - navigation.expand
@@ -56,6 +55,23 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
+  - i18n:
+      docs_structure: suffix
+      reconfigure_material: true
+      languages:
+        - locale: ru
+          name: Русский
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            Главная: Home
+            Операционные системы: Operating Systems
+            Загрузочная флешка: Bootable USB
+            Ventoy: Ventoy
+            Установка Arch Linux: Install Arch Linux
   - search
   - social
 
@@ -65,3 +81,10 @@ extra:
       link: https://t.me/vrubovoy
     - icon: fontawesome/brands/github
       link: https://github.com/zudaR107
+  alternate:
+    - name: Русский
+      link: /
+      lang: ru
+    - name: English
+      link: /en/
+      lang: en

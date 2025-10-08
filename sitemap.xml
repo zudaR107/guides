@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-         <loc>https://docs.zudar.ru/</loc>
-         <lastmod>2025-10-07</lastmod>
+        <loc>https://docs.zudar.ru/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/"/>
     </url>
     <url>
-         <loc>https://docs.zudar.ru/os/arch-install/</loc>
-         <lastmod>2025-10-07</lastmod>
+        <loc>https://docs.zudar.ru/os/arch-install/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/os/arch-install/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/os/arch-install/"/>
     </url>
     <url>
-         <loc>https://docs.zudar.ru/os/bootable-usb/</loc>
-         <lastmod>2025-10-07</lastmod>
+        <loc>https://docs.zudar.ru/os/bootable-usb/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/os/bootable-usb/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/os/bootable-usb/"/>
     </url>
     <url>
-         <loc>https://docs.zudar.ru/os/ventoy/</loc>
-         <lastmod>2025-10-07</lastmod>
+        <loc>https://docs.zudar.ru/os/ventoy/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/os/ventoy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/os/ventoy/"/>
+    </url>
+    <url>
+        <loc>https://docs.zudar.ru/en/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/"/>
+    </url>
+    <url>
+        <loc>https://docs.zudar.ru/en/os/arch-install/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/os/arch-install/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/os/arch-install/"/>
+    </url>
+    <url>
+        <loc>https://docs.zudar.ru/en/os/bootable-usb/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/os/bootable-usb/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/os/bootable-usb/"/>
+    </url>
+    <url>
+        <loc>https://docs.zudar.ru/en/os/ventoy/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.zudar.ru/en/os/ventoy/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://docs.zudar.ru/os/ventoy/"/>
     </url>
 </urlset>

@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="ru" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -10,28 +10,26 @@
       
       
       
-        <link rel="canonical" href="https://docs.zudar.ru/os/ventoy/">
+        <link rel="canonical" href="https://docs.zudar.ru/en/os/arch-install/">
       
       
-        <link rel="prev" href="../bootable-usb/">
+        <link rel="prev" href="../ventoy/">
       
       
-        <link rel="next" href="../arch-install/">
       
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Ventoy - ZudaR Docs</title>
+        <title>Install Arch Linux - ZudaR Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Ventoy - ZudaR Docs" >
+        <meta  property="og:title"  content="Install Arch Linux - ZudaR Docs" >
       
         <meta  property="og:description"  content="Гайды по ОС, Arch Linux и прочим радостям жизни" >
       
-        <meta  property="og:image"  content="https://docs.zudar.ru/assets/images/social/os/ventoy.png" >
+        <meta  property="og:image"  content="https://docs.zudar.ru/assets/images/social/os/arch-install.en.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://docs.zudar.ru/os/ventoy/" >
+        <meta  property="og:url"  content="https://docs.zudar.ru/en/os/arch-install/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Ventoy - ZudaR Docs" >
+        <meta  name="twitter:title"  content="Install Arch Linux - ZudaR Docs" >
       
         <meta  name="twitter:description"  content="Гайды по ОС, Arch Linux и прочим радостям жизни" >
       
-        <meta  name="twitter:image"  content="https://docs.zudar.ru/assets/images/social/os/ventoy.png" >
+        <meta  name="twitter:image"  content="https://docs.zudar.ru/assets/images/social/os/arch-install.en.png" >
       
     
     
@@ -102,8 +100,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-ventoy" class="md-skip">
-          Перейти к содержанию
+        <a href="#operating-systems-part-3-installing-arch-linux" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -117,8 +115,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="../.." title="ZudaR Docs" class="md-header__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="ZudaR Docs" class="md-header__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -138,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ventoy
+              Install Arch Linux
             
           </span>
         </div>
@@ -178,20 +176,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Выберите язык">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="ru" class="md-select__link">
+            <a href="../../../os/arch-install/" hreflang="ru" class="md-select__link">
               Русский
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../../en/os/ventoy/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -212,16 +210,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Поиск">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -232,7 +230,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Инициализация поиска
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -244,7 +242,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/zudaR107/guides" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+        <a href="https://github.com/zudaR107/guides" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -280,9 +278,9 @@
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ZudaR Docs" class="md-nav__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+    <a href="../../" title="ZudaR Docs" class="md-nav__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -292,7 +290,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/zudaR107/guides" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+      <a href="https://github.com/zudaR107/guides" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -312,12 +310,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Главная
+    Home
     
   </span>
   
@@ -357,7 +355,7 @@
   
   
   <span class="md-ellipsis">
-    Операционные системы
+    Operating Systems
     
   </span>
   
@@ -368,7 +366,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Операционные системы
+            Operating Systems
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -384,7 +382,30 @@
   
   
   <span class="md-ellipsis">
-    Загрузочная флешка
+    Bootable USB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ventoy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ventoy
     
   </span>
   
@@ -416,7 +437,7 @@
   
   
   <span class="md-ellipsis">
-    Ventoy
+    Install Arch Linux
     
   </span>
   
@@ -429,7 +450,7 @@
   
   
   <span class="md-ellipsis">
-    Ventoy
+    Install Arch Linux
     
   </span>
   
@@ -438,7 +459,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -447,25 +468,67 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Содержание
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#plan" class="md-nav__link">
     <span class="md-ellipsis">
-      План действий
+      🧭 Plan
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#preparation" class="md-nav__link">
     <span class="md-ellipsis">
-      Что в итоге
+      🖥️ Preparation
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-with-archinstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Installation with archinstall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-reboot-fix-grub-and-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 After reboot: fix GRUB and Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Result
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#next-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -473,29 +536,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../arch-install/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Установка Arch Linux
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -524,7 +564,7 @@
 
 
   
-    <a href="https://github.com/zudaR107/guides/edit/main/docs/os/ventoy.md" title="Редактировать страницу" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/zudaR107/guides/edit/main/docs/os/arch-install.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -532,115 +572,228 @@
   
 
 
-<h1 id="2-ventoy">Операционные системы. Часть 2 — «Ventoy» 🚀<a class="headerlink" href="#2-ventoy" title="Permanent link">&para;</a></h1>
-<p>В прошлой статье мы сделали загрузочную флешку, успешно воткнули её в комп коллеге и слегка подорвали его веру в «только GUI и ничего больше» 😏</p>
-<p>Но ладно, пора и совесть включить — вернём человеку «винду». И сделаем это красиво: не одна система на весь носитель, а <strong>Ventoy</strong> с кучей ISO на одной флешке. Ну серьёзно, занимать 64 ГБ одним образом (да ещё и &lt; 2 ГБ) — несолидно 🙃</p>
-<p><strong>Ventoy</strong> — бесплатная утилита с открытым исходным кодом, которая делает USB‑накопитель загрузочным так, что вы просто копируете на него <strong>ISO / WIM / IMG / VHD(x) / EFI</strong>‑файлы, а потом выбираете нужный в меню. Красота ❤️</p>
+<h1 id="operating-systems-part-3-installing-arch-linux">Operating Systems. Part 3 — “Installing Arch Linux” 🚀<a class="headerlink" href="#operating-systems-part-3-installing-arch-linux" title="Permanent link">&para;</a></h1>
+<p>In the previous episodes we conjured a USB with Arch (or a full <strong>Ventoy</strong> multi‑boot) and poked a bit of fun at the “GUI‑only” cult 😏</p>
+<p>Time to install the <strong>best OS of all time</strong>, made by humans for humans. Yep, I mean <strong>Arch</strong> 🖤🐧</p>
 <hr />
-<h2 id="_1">План действий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="plan">🧭 Plan<a class="headerlink" href="#plan" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Prepare the media and check the network.</li>
+<li>Update <code>archinstall</code> in the live environment (it’s often outdated on the ISO).</li>
+<li>Walk through the installer: disks, btrfs, bootloader, profile, packages.</li>
+<li>Reboot and make <strong>GRUB</strong> see Windows.</li>
+</ol>
+<p>Along the way — screenshots and author commentary, with my signature grumbling here and there 🙃</p>
+<hr />
+<h2 id="preparation">🖥️ Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>Идём в Windows и берём нашу флешку.</strong></p>
-<p>Форматируем как обычно. Тут ничего нового.  </p>
+<p><strong>Write the Arch Linux ISO</strong> with <strong>archinstall</strong>. I’m using Ventoy with a bunch of ISOs (and yeah, two pieces of junk — Windows 10 and 11 — are lying nearby; useful for dual‑boot).</p>
 </li>
 <li>
-<p><strong>ISO Arch Linux</strong> у нас уже есть с прошлой статьи.</p>
-<p>Если нет — скачайте заранее. (И да, <strong>Arch Wiki</strong> — это святое 🔥)</p>
+<p><strong>If you need dual‑boot</strong>, install Windows first — fewer headaches.</p>
 </li>
 <li>
-<p><strong>Достать ISO Windows.</strong></p>
-<p>И вот тут начинаются пляски… Примерно с 2022 года Microsoft ограничила скачивание образов для жителей нашей великой державы. Поэтому «просто с сайта» — не прокатывает даже с использованием трёх букв 😑</p>
-<p><img alt="Ошибка при скачивании ISO" src="../../images/os/ventoy/microsoft_not_work.png" /></p>
-<p>Качать с торрентов? Я не фанат (даже рутрекеру тут не доверяю) — слишком много мусора. Ищем официальный способ.</p>
+<p>In Windows, open <strong>Disk Management</strong> and <strong>shrink</strong> a partition to free space for Arch. If Arch goes to a <strong>separate SSD</strong>, just leave it empty.</p>
+<p><img alt="Disk management" src="../../../images/os/arch-install/disk_settings.png" /></p>
 </li>
 <li>
-<p><strong>Media Creation Tool — наше всё.</strong></p>
-<p>Это фирменная утилита от Microsoft, которая готовит загрузочные образы Windows 10/11 напрямую с их серверов и без ключа продукта. Но сама по себе она тоже недоступна в нашей стране. Выручают ребята с GitHub:</p>
-<p>👉 Репозиторий: <a href="https://github.com/AveYo/MediaCreationTool.bat">https://github.com/AveYo/MediaCreationTool.bat</a></p>
-<p>Нажимаем <strong>Code → Download ZIP</strong>, скачиваем архив и распаковываем куда удобно.</p>
-<p><img alt="Содержимое папки" src="../../images/os/ventoy/media_creation_tool_bat.png" /></p>
-<blockquote>
-<p>⚠️ Дальше по-хорошему пригодятся «три буквы» (вы поняли какие). Гайда по ним <strong>не будет</strong> — современные реалии такие. Работает ли батник без них именно у вас — проверяйте.</p>
-</blockquote>
+<p><strong>Windows must be GPT (not MBR)!</strong> If you’re on MBR — convert to GPT:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mbr2gpt</span> <span class="p">/</span><span class="n">convert</span> <span class="p">/</span><span class="n">allowFullOS</span>
+</code></pre></div>
 </li>
 <li>
-<p><strong>Запускаем скрипт.</strong></p>
-<p>Открываем <code>MediaCreationTool.bat</code> из распакованной папки.</p>
-<p><img alt="Запущенный скрипт" src="../../images/os/ventoy/started_bat.png" /></p>
+<p><strong>Check BitLocker / Device Encryption.</strong> Either disable it, or write down the 48‑digit recovery key and keep it handy (like on paper). Otherwise there’s a good chance the bootloader gets locked after installing Arch 🤡</p>
 </li>
 <li>
-<p><strong>Windows 10:</strong> выбираем <strong>22H2</strong> — она до сих пор максимально стабильная и удобная, как по мне. Эх, жаль, что поддержка не вечна 🥲</p>
-<p><img alt="22H2" src="../../images/os/ventoy/22h2.png" /></p>
+<p><strong>Boot from the USB</strong>: pick the USB device in BIOS/UEFI → land in the live environment.</p>
+<p><img alt="Live-CD" src="../../../images/os/arch-install/live_cd.png" /></p>
 </li>
 <li>
-<p><strong>Жмём Auto ISO.</strong></p>
-<p>Скрипт сам запустит скачивание в стандартную папку (обычно диск <code>C:</code>), если вы запускали его прямо из архива; либо внутрь распакованной папки. Просто ждём… ⏳</p>
-<p><img alt="Скачивание ISO Windows 10 22H2" src="../../images/os/ventoy/download_win10.png" /></p>
-<p><img alt="Продолжение скачивания" src="../../images/os/ventoy/continue_download_win10.png" /></p>
-<p><img alt="Завершение скачивания" src="../../images/os/ventoy/end_download_win10.png" /></p>
+<p><strong>archinstall</strong> is the official semi‑automated installer for Arch. Sure, you can do it the “proper” manual way — even <strong>with a single command</strong> — but I’m not a masochist (though after &gt;10 installs, the temptation is real).</p>
 </li>
 <li>
-<p><strong>Windows 11:</strong> делаем аналогично. Снова запускаем скрипт и выбираем последнюю <code>11_23H2</code> → <strong>Auto ISO</strong> → ждём.</p>
-<p><img alt="Запущенный скрипт" src="../../images/os/ventoy/started_bat.png" /></p>
-<p><img alt="Скачивание ISO Windows 11 23H2" src="../../images/os/ventoy/download_win11.png" /></p>
+<p><strong>Check the network</strong>:</p>
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">8</span>.8.8.8
+</code></pre></div>
+<p>If wired works — nice. For Wi‑Fi, hook up via <code>iwctl</code>:</p>
+<div class="highlight"><pre><span></span><code>iwctl
+station<span class="w"> </span>wlan0<span class="w"> </span>scan
+station<span class="w"> </span>wlan0<span class="w"> </span>get-networks
+station<span class="w"> </span>wlan0<span class="w"> </span>connect<span class="w"> </span><span class="s2">&quot;MyWiFi&quot;</span><span class="w"> </span>--passphrase<span class="w"> </span><span class="s2">&quot;supersecret&quot;</span>
+<span class="nb">exit</span>
+</code></pre></div>
+<p><img alt="Ping" src="../../../images/os/arch-install/ping.png" /></p>
 </li>
 <li>
-<p><strong>Итог по ISO от Microsoft.</strong></p>
-<p>В итоге у нас на диске лежат <strong>два ISO</strong>: Windows 10 (22H2) и Windows 11 (23H2).</p>
-<p><img alt="Скачанные образы Windows" src="../../images/os/ventoy/iso_win_10_11.png" /></p>
-<p>По времени это заняло около <strong>30 минут</strong> (оба образа). У вас может быть быстрее/дольше — как повезёт с каналом ⚡</p>
+<p><strong>pacman keys (just in case)</strong> — initialize and populate:</p>
+<div class="highlight"><pre><span></span><code>pacman<span class="w"> </span>-S<span class="w"> </span>archlinux-keyring
+pacman-key<span class="w"> </span>--init
+pacman-key<span class="w"> </span>--populate<span class="w"> </span>archlinux
+</code></pre></div>
+<p>Without valid keys, packages won’t install. No packages — no joy 🙂</p>
+<p><img alt="Keys" src="../../../images/os/arch-install/keys.png" /></p>
 </li>
 <li>
-<p><strong>Берём Ventoy.</strong></p>
-<p>Теперь у нас есть <strong>три ISO</strong>: Arch Linux, Windows 10 22H2 и Windows 11 23H2.</p>
-<p>Пора за Ventoy: 👉 <a href="https://ventoy.net">https://ventoy.net</a></p>
-<p>Заходим в <strong>Downloads</strong>, скачиваем ZIP‑архив, распаковываем.</p>
+<p><strong>Update archinstall</strong> (the ISO version is often ancient):</p>
+<div class="highlight"><pre><span></span><code>pacman<span class="w"> </span>-Sy<span class="w"> </span>archinstall
+</code></pre></div>
+<p>Old versions love to pull non‑existent packages — and you learn that <strong>at the very end</strong> of install. Who needs that? 😑</p>
+<p><img alt="Updating archinstall" src="../../../images/os/arch-install/archinstall_update.png" /></p>
 </li>
 <li>
-<p><strong>Запускаем <code>Ventoy2Disk.exe</code>.</strong></p>
-<p><img alt="Содержимое Ventoy" src="../../images/os/ventoy/ventoy_entries.png" /></p>
-</li>
-<li>
-<p><strong>Выбираем нужную флешку</strong> → жмём <strong>Install</strong> → ждём.</p>
-<p><img alt="Содержимое Ventoy" src="../../images/os/ventoy/ventoy_started.png" /></p>
-<blockquote>
-<p>⚠️ Важно: Ventoy <strong>переразобьёт</strong> носитель под себя. Всё, что было на флешке, улетит в космос. Проверьте, что выбрана <strong>правильная</strong> буква диска. Не будьте как я 🤡</p>
-</blockquote>
-</li>
-<li>
-<p><strong>Проверяем результат установки.</strong></p>
-<p>После установки флешка будет подписана как <strong>Ventoy</strong> — значит всё ок ✅</p>
-<p><img alt="Наша флешка" src="../../images/os/ventoy/ventoy_completed.png" /></p>
-</li>
-<li>
-<p><strong>Копируем ISO на флешку.</strong></p>
-<p><strong>Копируем все три ISO на флешку.</strong> Просто перетаскиваем файлы — никаких «записей образов», «магии» и прочего шаманства.</p>
-<p><img alt="Содержимое флешки" src="../../images/os/ventoy/ventoy_usb.png" /></p>
-<p>Это заняло ещё минут 30 🙂 Обратите внимание на общий объём — ISO‑шники винды оочень толстые.</p>
-</li>
-<li>
-<p><strong>Грузимся с Ventoy.</strong></p>
-<p><strong>Перезагружаемся и грузимся с флешки</strong> (см. прошлую статью про выбор Boot Menu). Перед нами меню Ventoy:</p>
-<p><img alt="Меню Ventoy" src="../../images/os/ventoy/ventoy_menu.jpg" /></p>
-<p>Тут уж извините — скриншот нормально сделать нельзя <code>¯\_(ツ)_/¯</code></p>
-</li>
-<li>
-<p><strong>Тестируем запуск каждого образа.</strong></p>
-<p><strong>Arch Linux:</strong></p>
-<p><img alt="Установщик Arch Linux" src="../../images/os/ventoy/archinstall.png" /></p>
-<p><strong>Windows 10 22H2:</strong></p>
-<p><img alt="Установщик Windows 10" src="../../images/os/ventoy/win10setup.png" /></p>
-<p><strong>Windows 11 23H2:</strong></p>
-<p><img alt="Установщик Windows 11" src="../../images/os/ventoy/win11setup.png" /></p>
-<p>Всё стартует — красота! 🎯</p>
+<p><strong>Start the installer</strong>:</p>
+<div class="highlight"><pre><span></span><code>archinstall
+</code></pre></div>
+<p><img alt="Starting archinstall" src="../../../images/os/arch-install/archinstall_start.png" /></p>
 </li>
 </ol>
 <hr />
-<h2 id="_2">Что в итоге<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Теперь у нас <strong>универсальная флешка</strong>: и Linux поставить, и «винду» вернуть, и вообще выглядеть как человек, который думает на шаг вперёд 😉</p>
-<p>Ventoy — вещь, которую я таскаю с собой всегда.</p>
-<p>Ещё можно закинуть на неё других дистрибутивов (например, Debian) — пусть будет богатый выбор.</p>
-<p><strong>Всем добра!</strong> Установка Arch Linux — в следующей статье 🖤🐧</p>
+<h2 id="installation-with-archinstall">⚙️ Installation with archinstall<a class="headerlink" href="#installation-with-archinstall" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Installer language</strong> — keep English.</p>
+</li>
+<li>
+<p><strong>Locales</strong> — for now, only <code>en_US.UTF-8</code>. We’ll add Russian after install.</p>
+<p><img alt="Locales" src="../../../images/os/arch-install/locales.png" /></p>
+</li>
+<li>
+<p><strong>Mirrors</strong> — pick a region close to you (I used to choose <code>/Russia</code>).</p>
+<p><img alt="Mirrors region" src="../../../images/os/arch-install/mirrors_region.png" /></p>
+</li>
+<li>
+<p><strong>Disk configuration</strong> — this is where lives can be ruined. Scenarios:</p>
+<ul>
+<li><strong>Arch only on the disk</strong> → <em>Best‑effort default partitioning</em>.</li>
+<li><strong>Two disks (Windows and Arch separate)</strong> → choose the empty disk → <em>Best‑effort</em>.</li>
+<li><strong>Single disk dual‑boot</strong> → shrink Windows beforehand → in the installer use <strong>free space</strong> → <em>Manual Partitioning</em> → create the required partitions manually.</li>
+</ul>
+<p>For a btrfs setup:</p>
+<ul>
+<li><code>/boot</code> — <strong>at least 1 GB</strong> (not 100 MB, please!)</li>
+<li>
+<p>btrfs subvolumes:</p>
+<ul>
+<li><code>@</code>      → <code>/</code></li>
+<li><code>@home</code>  → <code>/home</code></li>
+<li><code>@log</code>   → <code>/var/log</code></li>
+<li><code>@pkg</code>   → <code>/var/cache/pacman/pkg</code></li>
+<li><code>@.snapshots</code> → <code>/.snapshots</code></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Free disk" src="../../../images/os/arch-install/free_space_disk.png" /></p>
+<p>The screenshot shows the empty Kingston SSD. Hit <strong>Suggest partition layout</strong>.</p>
+<p><img alt="Create layout" src="../../../images/os/arch-install/layout.png" /></p>
+<p><strong>Filesystem: btrfs.</strong> I’ve been on it for a long time and I’m happy. Theory and tuning will be a separate post. CoW is <strong>disabled</strong>.</p>
+<p><img alt="Created partitions" src="../../../images/os/arch-install/creating_layouts.png" /></p>
+<p>You’ll end up with something like this:</p>
+<p><img alt="Partitioning result" src="../../../images/os/arch-install/disk_partitioning.png" /></p>
+<blockquote>
+<p>⚠️ This is the trickiest step. It used to ruin installs for me or nuke Windows. Be attentive — read what the installer says.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Disk encryption</strong> — optional. I leave it off.</p>
+</li>
+<li>
+<p><strong>Swap</strong> — enable it. Detailed swap/hibernation tuning — later.</p>
+</li>
+<li>
+<p><strong>Bootloader</strong>:</p>
+<ul>
+<li>If Arch is <strong>the only OS</strong> — use <code>systemd-boot</code>.</li>
+<li>If it’s <strong>dual‑boot</strong> — <strong>GRUB</strong>, period. You <em>can</em> tweak <code>systemd-boot</code> for dual‑boot, but I’m not eager (burned a whole day — unsuccessfully 😅).</li>
+</ul>
+<p><img alt="Bootloader" src="../../../images/os/arch-install/bootloader.png" /></p>
+</li>
+<li>
+<p><strong>Hostname</strong> — anything pleasant. That’s your machine’s name on the network.</p>
+</li>
+<li>
+<p><strong>Authentication</strong> — set the <strong>root password</strong>, create a <strong>regular user</strong> and grant sudo (archinstall has an option for that). On Linux we work <strong>as user</strong>, and use privileges consciously.</p>
+<p><img alt="Authentication" src="../../../images/os/arch-install/authentication.png" /></p>
+</li>
+<li>
+<p><strong>Profile</strong> — your initial system selection:</p>
+<ul>
+<li><strong>Desktop → Hyprland</strong> (my choice).</li>
+<li><strong>Polkit</strong> or <strong>seatd</strong> — I pick <strong>polkit</strong>.</li>
+<li><strong>Graphics driver</strong> — <em>All open‑source</em> (light side of the Force).</li>
+<li><strong>Greeter</strong> — <strong>ly</strong> (minimalistic).</li>
+</ul>
+<p><img alt="Profile" src="../../../images/os/arch-install/profile.png" /></p>
+</li>
+<li>
+<p><strong>Applications → Audio → PipeWire</strong> — choose it, not <code>pulseaudio</code> (that one’s retired and used to act up for me).</p>
+<p>Bluetooth — optional, can be configured later.</p>
+</li>
+<li>
+<p><strong>Kernels</strong> — I prefer <code>linux-zen</code> over <code>linux</code>.</p>
+</li>
+<li>
+<p><strong>Network configuration</strong> — “Copy ISO network configuration to installation”. That’s why we checked internet early on.</p>
+</li>
+<li>
+<p><strong>Additional packages</strong> — I add <code>vim</code> to test (because of course).</p>
+</li>
+<li>
+<p><strong>Timezone</strong> — <code>UTC</code> is fine (we’ll align Windows/Arch time later).</p>
+</li>
+<li>
+<p><strong>NTP (Automatic time sync)</strong> — <strong>Enabled</strong>. Sometimes networks act up and NTP fails — I never figured out why. Try a different Wi‑Fi if needed.</p>
+</li>
+<li>
+<p><strong>Install → Yes</strong> and pray to Linus Torvalds.</p>
+<p>The disk will be formatted, packages will fly by. Took me <strong>10–30 minutes</strong> depending on bandwidth and SSD.</p>
+</li>
+<li>
+<p>If something <strong>crashes</strong> (and <code>archinstall</code> is Python, so it happens), <strong>read the logs</strong> — the installer will offer a command to upload logs and give you a link. Open it in a browser and analyze.</p>
+</li>
+<li>
+<p><strong>Done!</strong> You can chroot into the installed system right from the installer, drop back to live, or simply <strong>reboot</strong>. UEFI will have a <strong>UEFI OS</strong> entry — pick that.</p>
+<p><img alt="Boot order" src="../../../images/os/arch-install/UEFI.bmp" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="after-reboot-fix-grub-and-windows">🧰 After reboot: fix GRUB and Windows<a class="headerlink" href="#after-reboot-fix-grub-and-windows" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Boot up. You see <strong>GRUB</strong>, but only <strong>Arch</strong> in the menu. Okay, let’s fix it.</p>
+</li>
+<li>
+<p>Log in (ly → user/password). You’ll land in default <strong>Hyprland</strong>. At the top — a bunch of config errors… it’s fine, we’ll sort it out in the next part. For now, the goal is to bring Windows back to the GRUB menu.</p>
+</li>
+<li>
+<p>Update the system (just in case):</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu
+</code></pre></div>
+</li>
+<li>
+<p>Install and configure <strong>os-prober</strong>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>os-prober
+sudo<span class="w"> </span>os-prober<span class="w">                 </span><span class="c1"># verify it detects Windows</span>
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^#\?GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=false/&#39;</span><span class="w"> </span>/etc/default/grub
+sudo<span class="w"> </span>grub-mkconfig<span class="w"> </span>-o<span class="w"> </span>/boot/grub/grub.cfg
+</code></pre></div>
+<p>Here it should pick up the Windows bootloader.</p>
+</li>
+<li>
+<p>Reboot:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>reboot<span class="w"> </span>now
+</code></pre></div>
+<p>Check <strong>GRUB</strong> — choose Windows. If it starts — victory 🎉</p>
+</li>
+</ol>
+<hr />
+<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
+<p>With <strong>archinstall</strong>, the setup goes briskly and without voodoo — as long as you’re careful with disks and the bootloader. This guide comes after <strong>~10 Arch installs</strong> 😅 (too much pain to fit here) — there were plenty of hiccups, but now you’ve got a <strong>beaten path</strong> to follow.</p>
+<p>I’ve tried Debian, ElementaryOS, Fedora (meh), Ubuntu (meh ×2), i3, GNOME (nope), KDE (also nope). I settled on <strong>Arch + Hyprland (via HyDE)</strong> — the simplest and most convenient <strong>for me</strong>. I’m planning to try <strong>NixOS</strong> (brain‑melter) and <strong>CacheOS</strong> (Arch‑based).</p>
+<p><strong>Thanks for reading! May Arch be with you!</strong> ✌️ :3</p>
+<hr />
+<h3 id="next-up">Next up<a class="headerlink" href="#next-up" title="Permanent link">&para;</a></h3>
+<p>In the <strong>next article</strong>: <strong>post‑install Arch Linux setup</strong> — software, Hyprland, fonts, layouts, dotfiles.</p>
 
 
 
@@ -719,10 +872,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

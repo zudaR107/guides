@@ -63,7 +63,7 @@
 9. **Ключи pacman (на всякий случай)** — инициализация и наполнение:
 
       ```bash
-      pacman -S archlinux-keyring
+      pacman -Sy archlinux-keyring
       pacman-key --init
       pacman-key --populate archlinux
       ```

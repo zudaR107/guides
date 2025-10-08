@@ -62,7 +62,7 @@ Along the way — screenshots and author commentary, with my signature grumbling
 9. **pacman keys (just in case)** — initialize and populate:
 
       ```bash
-      pacman -S archlinux-keyring
+      pacman -Sy archlinux-keyring
       pacman-key --init
       pacman-key --populate archlinux
       ```

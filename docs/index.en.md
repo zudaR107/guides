@@ -8,3 +8,5 @@ Below are sections and fresh materials.
   * [Part 1. Bootable USB](os/bootable-usb.md)
   * [Part 2. Ventoy](os/ventoy.md)
   * [Part 3. Installing Arch Linux](os/arch-install.md)
+  * [Part 4. Arch Linux Setup](os/arch-setup.md)
+

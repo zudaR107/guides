@@ -1,0 +1,1265 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Гайды по ОС, Arch Linux и прочим радостям жизни">
+      
+      
+      
+        <link rel="canonical" href="https://docs.zudar.ru/en/git/ssh-gpg/">
+      
+      
+        <link rel="prev" href="../../os/arch-setup/">
+      
+      
+      
+        
+          <link rel="alternate" href="../../../git/ssh-gpg/" hreflang="ru">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>SSH and GPG - ZudaR Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SSH and GPG - ZudaR Docs" />
+<meta property="og:description" content="Гайды по ОС, Arch Linux и прочим радостям жизни" />
+<meta property="og:image" content="https://docs.zudar.ru/assets/images/social/en/git/ssh-gpg.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.zudar.ru/en/git/ssh-gpg/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="SSH and GPG - ZudaR Docs" />
+<meta property="twitter:description" content="Гайды по ОС, Arch Linux и прочим радостям жизни" />
+<meta property="twitter:image" content="https://docs.zudar.ru/assets/images/social/en/git/ssh-gpg.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git-and-repos-part-1-ssh-and-gpg" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="ZudaR Docs" class="md-header__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZudaR Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SSH and GPG
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../git/ssh-gpg/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/zudaR107/guides" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="ZudaR Docs" class="md-nav__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZudaR Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/zudaR107/guides" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operating Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/bootable-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootable USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/ventoy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ventoy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/arch-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/arch-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arch Linux Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git and repos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git and repos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH and GPG
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH and GPG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-ssh-is-and-why-you-need-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 What SSH is and why you need it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-ed25519" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Why ed25519
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Creating an SSH key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-the-ssh-key-to-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Adding the SSH key to the agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-your-public-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 How to get your public SSH key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Configuring SSH
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-ssh-with-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Testing SSH with GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-for-your-own-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖥️ SSH for your own server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖥️ SSH for your own server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-first-login-with-a-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. First login — with a password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-copy-the-key-to-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Copy the key to the server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-now-key-based-login-should-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Now key-based login should work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-disable-password-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Disable password login
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gpg-is-and-why-you-need-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔏 What GPG is and why you need it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-gpg-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Creating a GPG key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-your-gpg-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Viewing your GPG key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-gpg-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧷 Configuring gpg-agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-gpg-to-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Connecting GPG to Git
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-commit-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Verifying commit signatures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-store-keys-properly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 How to store keys properly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-we-ended-up-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 What we ended up with
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/zudaR107/guides/edit/main/docs/git/ssh-gpg.en.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="git-and-repos-part-1-ssh-and-gpg">Git and repos. Part 1 — “SSH and GPG” 🔐<a class="headerlink" href="#git-and-repos-part-1-ssh-and-gpg" title="Permanent link">&para;</a></h1>
+<p>Once you start working with repositories properly, you pretty quickly run into two things: <strong>SSH</strong> and <strong>GPG</strong>. The first one lets you access remote repositories conveniently and securely without typing your login and password forever. The second one is for <strong>signing commits and tags</strong>, proving that yes, it was actually you — not some random dude named Bob from a suspicious basement.</p>
+<p>In this article, we’ll calmly set both up without unnecessary drama: create an <strong>SSH key</strong> for <strong>GitHub / Gitea / servers</strong>, then generate a <strong>GPG key</strong> for signing commits. Along the way, we’ll also cover <strong>what all this stuff actually is</strong>, how to use it, and why private keys should be guarded like the crown jewels.</p>
+<p>Let’s go 😎</p>
+<hr />
+<h2 id="what-ssh-is-and-why-you-need-it">🔑 What SSH is and why you need it<a class="headerlink" href="#what-ssh-is-and-why-you-need-it" title="Permanent link">&para;</a></h2>
+<p><strong>SSH</strong> (<strong>Secure Shell</strong>) is a secure protocol for remote access and authentication. Put simply, it lets you prove to the other side that you are who you say you are <strong>without sending your password over the network every single time</strong>.</p>
+<p>In the Git world, this is especially nice. Instead of typing your login, password, tokens, and other misery every time you run <code>git clone</code>, <code>git pull</code>, or <code>git push</code>, you create a key pair once:</p>
+<ul>
+<li>a <strong>private key</strong> — kept only on your machine;</li>
+<li>a <strong>public key</strong> — uploaded to <strong>GitHub</strong>, <strong>Gitea</strong>, a server, or wherever needed.</li>
+</ul>
+<p>Then the server goes: “Ah yes, I know this public key” — and lets you in. Lovely.</p>
+<blockquote>
+<p><strong>Important:</strong> never give your private key to anyone. Ever. Seriously. A public key is meant to be shared and copied to servers. A private key is your digital pass.</p>
+</blockquote>
+<hr />
+<h2 id="why-ed25519">⚙️ Why ed25519<a class="headerlink" href="#why-ed25519" title="Permanent link">&para;</a></h2>
+<p>For SSH keys, the sane default today is <strong>ed25519</strong>.</p>
+<p>What even is that? It’s a modern algorithm based on <strong>elliptic curves, specifically EdDSA over Curve25519</strong>. Sounds like something muttered by a cryptographer in a dimly lit basement, but the practical part is what matters: <strong>ed25519</strong> is secure, fast, compact, and supported by basically every normal modern system.</p>
+<p>Why it’s good:</p>
+<ul>
+<li>compact;</li>
+<li>fast;</li>
+<li>secure;</li>
+<li>supported almost everywhere.</li>
+</ul>
+<p>If you’re not dealing with some ancient museum-grade infrastructure held together with duct tape and <code>rsa</code>, <strong>ed25519</strong> is the right choice.</p>
+<hr />
+<h2 id="creating-an-ssh-key">🛠️ Creating an SSH key<a class="headerlink" href="#creating-an-ssh-key" title="Permanent link">&para;</a></h2>
+<p>Let’s generate one regular key for your local system:</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519
+</code></pre></div>
+<p>Then the system will ask:</p>
+<ol>
+<li><strong>Where to save the key.</strong> You can keep the default path.</li>
+<li>A <strong>passphrase</strong> for the key. I <strong>strongly recommend</strong> setting one.</li>
+</ol>
+<p>If you keep the default path, you’ll end up with two files:</p>
+<ul>
+<li><code>~/.ssh/id_ed25519</code> — private key;</li>
+<li><code>~/.ssh/id_ed25519.pub</code> — public key.</li>
+</ul>
+<hr />
+<h2 id="adding-the-ssh-key-to-the-agent">🧠 Adding the SSH key to the agent<a class="headerlink" href="#adding-the-ssh-key-to-the-agent" title="Permanent link">&para;</a></h2>
+<p>To avoid typing the passphrase every single time, you can load the key into <strong>ssh-agent</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+ssh-add<span class="w"> </span>~/.ssh/id_ed25519
+</code></pre></div>
+<p>Yes, the <code>eval</code> command is most comfortable in <strong>bash</strong> or a compatible shell. But in general, this can be adapted just fine for other shells too.</p>
+<p>My usual setup is simple: after the first use, the key gets loaded into the agent and stays there <strong>until the terminal session is restarted</strong>. Convenient, without going full clown mode.</p>
+<p>If you use <strong>fish</strong>, it makes sense to add this to <code>~/.config/fish/config.fish</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Start ssh-agent if no agent socket is available.</span>
+<span class="k">if</span> <span class="k">not</span> <span class="k">set</span> -q SSH_AUTH_SOCK
+    <span class="nb">eval</span> <span class="o">(</span>ssh-agent -c<span class="o">)</span> <span class="o">&gt;</span> /dev/null
+<span class="k">end</span>
+</code></pre></div>
+<p>That way, the agent starts automatically if there’s no available socket for the current session yet. Small thing, nicer life.</p>
+<hr />
+<h2 id="how-to-get-your-public-ssh-key">📄 How to get your public SSH key<a class="headerlink" href="#how-to-get-your-public-ssh-key" title="Permanent link">&para;</a></h2>
+<p>You can print the public part of the key directly in the terminal:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</code></pre></div>
+<p>This is the text you copy:</p>
+<ul>
+<li>to <strong>GitHub</strong> → <code>Settings</code> → <code>SSH and GPG keys</code>;</li>
+<li>to <strong>Gitea</strong> → SSH key settings;</li>
+<li>to remote servers in <code>~/.ssh/authorized_keys</code>.</li>
+</ul>
+<blockquote>
+<p>Once again: the <code>.pub</code> file is the <strong>public</strong> key. That’s the one you share.</p>
+</blockquote>
+<hr />
+<h2 id="configuring-ssh">🧩 Configuring SSH<a class="headerlink" href="#configuring-ssh" title="Permanent link">&para;</a></h2>
+<p>To avoid typing a pile of parameters by hand every time, edit <code>~/.ssh/config</code>.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Host *
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
+  TCPKeepAlive yes
+  AddKeysToAgent yes
+  IdentitiesOnly yes
+  HashKnownHosts yes
+  StrictHostKeyChecking ask
+  IdentityAgent $SSH_AUTH_SOCK
+
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+
+Host myvps
+  HostName your.server.domain_or_ip
+  User your_user
+  Port 22
+  IdentityFile ~/.ssh/id_ed25519
+</code></pre></div>
+<p>What’s useful here:</p>
+<ul>
+<li><strong>AddKeysToAgent yes</strong> — the key can be added to the agent automatically;</li>
+<li><strong>IdentitiesOnly yes</strong> — SSH won’t try every key in your personal key zoo;</li>
+<li><strong>HashKnownHosts yes</strong> — the known hosts file is stored in hashed form;</li>
+<li><strong>StrictHostKeyChecking ask</strong> — SSH will ask for confirmation on first connect.</li>
+</ul>
+<p>After editing it, don’t forget to lock down permissions:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/config
+</code></pre></div>
+<hr />
+<h2 id="testing-ssh-with-github">✅ Testing SSH with GitHub<a class="headerlink" href="#testing-ssh-with-github" title="Permanent link">&para;</a></h2>
+<p>Now you can test the connection:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div>
+<p>If everything is fine, GitHub will greet you and say authentication was successful. It won’t give you a shell though — that part is normal.</p>
+<hr />
+<h2 id="ssh-for-your-own-server">🖥️ SSH for your own server<a class="headerlink" href="#ssh-for-your-own-server" title="Permanent link">&para;</a></h2>
+<p>GitHub is fairly civilized: paste the public key into settings and move on. Your own server is a bit more hands-on, but the logic is the same.</p>
+<h3 id="1-first-login-with-a-password">1. First login — with a password<a class="headerlink" href="#1-first-login-with-a-password" title="Permanent link">&para;</a></h3>
+<p>To get into the server for the first time, password login <strong>must be enabled</strong>. Usually that is configured in <code>sshd_config</code> like this:</p>
+<div class="highlight"><pre><span></span><code>PasswordAuthentication yes
+KbdInteractiveAuthentication yes
+UsePAM yes
+PermitRootLogin no
+</code></pre></div>
+<p>What those settings mean:</p>
+<ul>
+<li><strong>PasswordAuthentication yes</strong> — allows classic password-based SSH login;</li>
+<li><strong>KbdInteractiveAuthentication yes</strong> — enables keyboard-interactive authentication, which some systems still use together with password login;</li>
+<li><strong>UsePAM yes</strong> — allows PAM to participate in authentication; on many systems this is part of normal password login behavior;</li>
+<li><strong>PermitRootLogin no</strong> — root login over SSH is disabled. And that’s good. Logging in as <code>root</code> directly from the outside world is a bad habit and usually unnecessary.</li>
+</ul>
+<p>There is one important catch here: your system may also have <strong>additional SSH config files</strong> that override these settings. Something like <code>sshd_config.d/*.conf</code>, for example. So you may set <code>PasswordAuthentication yes</code>, restart SSH, and the server still acts like it has never heard of the idea. Check not only the main config, but also the included config directory.</p>
+<h3 id="2-copy-the-key-to-the-server">2. Copy the key to the server<a class="headerlink" href="#2-copy-the-key-to-the-server" title="Permanent link">&para;</a></h3>
+<p>After the first password login, copy your public key to the server:</p>
+<div class="highlight"><pre><span></span><code>ssh-copy-id<span class="w"> </span>your_user@your.server.domain_or_ip
+</code></pre></div>
+<p>If you use a non-standard port, specify it explicitly:</p>
+<div class="highlight"><pre><span></span><code>ssh-copy-id<span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span><span class="w"> </span>your_user@your.server.domain_or_ip
+</code></pre></div>
+<p>This command adds your public key to <code>~/.ssh/authorized_keys</code> on the server.</p>
+<h3 id="3-now-key-based-login-should-work">3. Now key-based login should work<a class="headerlink" href="#3-now-key-based-login-should-work" title="Permanent link">&para;</a></h3>
+<p>After that, try a normal login:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>your_user@your.server.domain_or_ip
+</code></pre></div>
+<p>If everything is configured correctly, the server should let you in using the key. No password needed anymore — which is exactly the point.</p>
+<h3 id="4-disable-password-login">4. Disable password login<a class="headerlink" href="#4-disable-password-login" title="Permanent link">&para;</a></h3>
+<p>And this part is <strong>mandatory</strong>: once you have confirmed that key-based login works, <strong>disable password login</strong>.</p>
+<p>Your server config should end up like this:</p>
+<div class="highlight"><pre><span></span><code>PasswordAuthentication no
+KbdInteractiveAuthentication no
+UsePAM yes
+PermitRootLogin no
+</code></pre></div>
+<p>Then restart <code>sshd</code> and sleep a little better.</p>
+<p>Yes, this means that when you connect from a <strong>new device</strong>, you will no longer be able to just type a password and walk in like it’s 2009. You’ll need to:</p>
+<ol>
+<li>either log in from an <strong>old trusted device</strong>;</li>
+<li>or use a <strong>web console / VNC / hosting panel</strong>;</li>
+<li>temporarily enable password login again;</li>
+<li>add the new key;</li>
+<li>and disable password login again.</li>
+</ol>
+<p>Yes, it’s less convenient. <strong>But that is security.</strong> A server that allows password login from the outside world always has a larger attack surface. Better to set it up properly once than later discover a surprise crypto miner and a full traveling circus from the other side of the planet.</p>
+<hr />
+<h2 id="what-gpg-is-and-why-you-need-it">🔏 What GPG is and why you need it<a class="headerlink" href="#what-gpg-is-and-why-you-need-it" title="Permanent link">&para;</a></h2>
+<p>Now for <strong>GPG</strong>.</p>
+<p><strong>GPG</strong> (<strong>GNU Privacy Guard</strong>) is a tool for cryptography: encryption, signature verification, and key management. In the Git context, we’re not interested in encryption here — we care about <strong>digital signatures</strong>.</p>
+<p>Why sign commits:</p>
+<ul>
+<li>GitHub / Gitea can show that a commit is <strong>signed and verified</strong>;</li>
+<li>it becomes easier to prove that the commit was actually made by you;</li>
+<li>it’s just good practice if you maintain public repositories or serious projects.</li>
+</ul>
+<p>If SSH says, “I’m allowed to access this server,” then GPG says, “I am the one who signed this commit.”</p>
+<hr />
+<h2 id="creating-a-gpg-key">🛠️ Creating a GPG key<a class="headerlink" href="#creating-a-gpg-key" title="Permanent link">&para;</a></h2>
+<p>Generate a key in interactive mode:</p>
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--full-generate-key
+</code></pre></div>
+<p>Recommended choices:</p>
+<ul>
+<li><strong>Key type</strong> — <code>ECC (sign only)</code>;</li>
+<li><strong>Curve</strong> — <code>Curve 25519</code>;</li>
+<li><strong>Expiration</strong> — whatever you prefer. I usually set <strong>1 year</strong>;</li>
+<li>then enter your <strong>name</strong>, <strong>email</strong>, and <strong>passphrase</strong>.</li>
+</ul>
+<p>Why one year is a reasonable choice:</p>
+<ul>
+<li>rotating keys from time to time is healthy;</li>
+<li>if a key leaks or becomes irrelevant, you won’t be stuck with it forever;</li>
+<li>a year is comfortable and not annoying.</li>
+</ul>
+<hr />
+<h2 id="viewing-your-gpg-key">🔍 Viewing your GPG key<a class="headerlink" href="#viewing-your-gpg-key" title="Permanent link">&para;</a></h2>
+<p>After generating it, list your secret keys:</p>
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--list-secret-keys<span class="w"> </span>--keyid-format<span class="o">=</span>long
+</code></pre></div>
+<p>The output will look something like this:</p>
+<div class="highlight"><pre><span></span><code>sec   ed25519/AAAAAAAAAAAAAAAA 2026-03-09 [SC] [expires: 2027-03-09]
+      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+uid                 [ultimate] Your Name &lt;your_email@example.com&gt;
+</code></pre></div>
+<p>What we care about here is the <strong>key ID</strong> — in this example, <code>AAAAAAAAAAAAAAAA</code>.</p>
+<p>Now export the public part:</p>
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--armor<span class="w"> </span>--export<span class="w"> </span>AAAAAAAAAAAAAAAA
+</code></pre></div>
+<p>That output should be pasted into:</p>
+<ul>
+<li><strong>GitHub</strong> → <code>Settings</code> → <code>SSH and GPG keys</code> → <code>New GPG key</code>;</li>
+<li>or the equivalent section in <strong>Gitea</strong>, if your instance supports commit signature verification.</li>
+</ul>
+<hr />
+<h2 id="configuring-gpg-agent">🧷 Configuring gpg-agent<a class="headerlink" href="#configuring-gpg-agent" title="Permanent link">&para;</a></h2>
+<p>To make passphrase prompts less annoying, configure <strong>gpg-agent</strong>. Edit <code>~/.gnupg/gpg-agent.conf</code>:</p>
+<div class="highlight"><pre><span></span><code>pinentry-program /usr/bin/pinentry-curses
+default-cache-ttl 2147483647
+max-cache-ttl 2147483647
+</code></pre></div>
+<p>What this means:</p>
+<ul>
+<li><strong>pinentry-program</strong> — which program will ask for the passphrase;</li>
+<li><strong>default-cache-ttl</strong> and <strong>max-cache-ttl</strong> — how long the agent keeps the passphrase in memory.</li>
+</ul>
+<p>Yes, those values look like we’re trying to break math. In practice, this gives you a very long cache. Realistically, it often ends up behaving like “the passphrase stays cached <strong>until you restart the terminal session or the agent</strong>.”</p>
+<p>If you work in the terminal, <code>pinentry-curses</code> is a good option. If you prefer graphical prompts, you can use <code>pinentry-gtk</code> or <code>pinentry-qt</code>.</p>
+<p>If you use <strong>fish</strong>, add this to <code>~/.config/fish/config.fish</code> too:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Ensure GPG pinentry can access the correct TTY.</span>
+<span class="k">set</span> -gx GPG_TTY <span class="o">(</span>tty<span class="o">)</span>
+</code></pre></div>
+<p>Without this line, <code>pinentry</code> sometimes starts improvising and pretending it has no idea which terminal it should talk to. We don’t need that kind of creativity.</p>
+<p>After editing the config, restart the agent:</p>
+<div class="highlight"><pre><span></span><code>gpgconf<span class="w"> </span>--kill<span class="w"> </span>gpg-agent
+gpgconf<span class="w"> </span>--launch<span class="w"> </span>gpg-agent
+</code></pre></div>
+<p>And don’t forget proper permissions for the directory:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.gnupg
+</code></pre></div>
+<hr />
+<h2 id="connecting-gpg-to-git">⚙️ Connecting GPG to Git<a class="headerlink" href="#connecting-gpg-to-git" title="Permanent link">&para;</a></h2>
+<p>Now tell Git which key to use for signing:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.signingkey<span class="w"> </span>AAAAAAAAAAAAAAAA
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>commit.gpgsign<span class="w"> </span><span class="nb">true</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>tag.gpgsign<span class="w"> </span><span class="nb">true</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>gpg.program<span class="w"> </span>gpg
+</code></pre></div>
+<p>What’s happening here:</p>
+<ul>
+<li><code>user.name</code> and <code>user.email</code> — commit authorship;</li>
+<li><code>user.signingkey</code> — which GPG key Git should use;</li>
+<li><code>commit.gpgsign true</code> — sign all commits by default;</li>
+<li><code>tag.gpgsign true</code> — sign tags;</li>
+<li><code>gpg.program gpg</code> — which binary to use.</li>
+</ul>
+<p>After that, Git will start signing commits automatically.</p>
+<hr />
+<h2 id="verifying-commit-signatures">✅ Verifying commit signatures<a class="headerlink" href="#verifying-commit-signatures" title="Permanent link">&para;</a></h2>
+<p>The easiest way is to create a test commit:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>test-gpg<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>test-gpg
+git<span class="w"> </span>init
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>README.md
+git<span class="w"> </span>add<span class="w"> </span>README.md
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;test: verify GPG signing&quot;</span>
+</code></pre></div>
+<p>If everything is configured correctly, Git will ask for your passphrase through <code>pinentry</code>, create the commit, and the platform will show that it is <strong>signed</strong>.</p>
+<p>You can also inspect the signature locally:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>log<span class="w"> </span>--show-signature<span class="w"> </span>-1
+</code></pre></div>
+<hr />
+<h2 id="how-to-store-keys-properly">🧠 How to store keys properly<a class="headerlink" href="#how-to-store-keys-properly" title="Permanent link">&para;</a></h2>
+<p>The logic here is simple.</p>
+<p>For your local system, create <strong>one SSH key</strong> and <strong>one GPG key</strong>. That is usually enough. Use the SSH key for GitHub, Gitea, and, if you want, your own servers. Use the GPG key for signing commits and tags.</p>
+<p>The main rules:</p>
+<ul>
+<li>do not copy private keys all over the place;</li>
+<li>do not send them through messengers, cloud notes, or “temporary” storage;</li>
+<li>set a passphrase whenever possible;</li>
+<li>public keys can be added to different servers and services.</li>
+</ul>
+<p>If you lose the device or suspect the key has leaked, the process is simple:</p>
+<ol>
+<li>remove the public key from GitHub / Gitea / servers;</li>
+<li>create a new pair;</li>
+<li>update the bindings.</li>
+</ol>
+<p>No panic — but also no “eh, it’ll probably be fine” mode.</p>
+<hr />
+<h2 id="what-we-ended-up-with">🏁 What we ended up with<a class="headerlink" href="#what-we-ended-up-with" title="Permanent link">&para;</a></h2>
+<p>We configured two important mechanisms:</p>
+<ul>
+<li><strong>SSH</strong> — for secure access to GitHub / Gitea / servers;</li>
+<li><strong>GPG</strong> — for signing commits and tags.</li>
+</ul>
+<p>Now you have a solid base for working with repositories: no endless password typing, cleaner authentication, and verifiable commits. No longer just “well, something got pushed somehow,” but a somewhat grown-up setup 🙂</p>
+<p>And the main thing now is simple: don’t leak your private keys all over the place, and don’t build a digital junkyard where one clean setup would do just fine 🖤</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/vrubovoy" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/zudaR107" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

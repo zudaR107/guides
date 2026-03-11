@@ -1,6 +1,6 @@
 # ZudaR Docs
 
-**Pragmatic tech guides & theory.** Installations, tooling, workflows, troubleshooting — written in a no‑BS style, with screenshots and copy‑paste commands. Built with **MkDocs** + **Material**.
+**Pragmatic tech guides & theory.** Installations, tooling, workflows, troubleshooting, security, and infrastructure — written in a no‑BS style, with screenshots and copy‑paste commands. Built with **MkDocs** + **Material for MkDocs**.
 
 👉 Live site: **[https://docs.zudar.ru](https://docs.zudar.ru)**
 
@@ -8,114 +8,140 @@
 
 ## What’s inside
 
-* Operating Systems: Arch Linux (bootable USB, Ventoy, archinstall, dual‑boot, btrfs, GRUB/UEFI)
-* Coming soon: more practical **and** theoretical posts beyond OS — dev tooling, networking, automation, security, etc.
-* Bilingual: **Russian (default)** and **English**.
+Current topics include:
+
+* **Operating Systems** — bootable USBs, Ventoy, Arch Linux installation and setup.
+* **Git and repos** — SSH, GPG, repository workflow, and related setup.
+* **Bilingual content** — **Russian** is the default language, with **English** translations alongside it.
+
+More practical and theoretical posts will be added over time: dev tooling, networking, automation, security, server setup, and other useful things.
 
 ---
 
 ## Quick start
 
 ```bash
-# 1) Python env (recommended)
-python -m venv .venv && source .venv/bin/activate
+# 1) Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate
 
-# 2) Install deps
-pip install -U mkdocs mkdocs-material mkdocs-static-i18n
+# 2) Install dependencies
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 
 # 3) Run locally
 mkdocs serve
 # open http://127.0.0.1:8000/
+# and also check http://127.0.0.1:8000/en/
 
-# 4) Build static site
-mkdocs build
-
-# Optional: deploy to GitHub Pages
-mkdocs gh-deploy
+# 4) Build the static site
+mkdocs build --strict
 ```
+
+> `mkdocs build --strict` is the recommended final check before pushing changes.
+
+---
+
+## Deployment
+
+Deployment is handled automatically via **GitHub Actions**.
+
+The workflow installs dependencies from `requirements.txt`, builds the site in strict mode, and publishes it to **GitHub Pages**.
+
+Typical flow:
+
+1. Make changes locally.
+2. Run `mkdocs serve` and verify both languages.
+3. Run `mkdocs build --strict`.
+4. Commit and push to `main`.
+5. GitHub Actions handles the rest.
+
+If you keep drafts or unfinished posts, it is better to work in separate branches and merge only ready content into `main`.
 
 ---
 
 ## Internationalization (i18n)
 
-This repo uses **`mkdocs-static-i18n`** with the **suffix strategy** so language links always land on the correct page.
+This repo uses **`mkdocs-static-i18n`** with the **suffix** strategy.
 
-* Russian files live as `*.md` (default language)
-* English translations live alongside as `*.en.md`
+That means:
 
-Example structure:
+* Russian files live as regular `*.md` files.
+* English translations live alongside as `*.en.md` files.
 
-```
+Example:
+
+```text
 docs/
   index.md
   index.en.md
   os/
-    bootable-usb.md
-    bootable-usb.en.md
-    ventoy.md
-    ventoy.en.md
     arch-install.md
     arch-install.en.md
-  images/...
+  git/
+    ssh-gpg.md
+    ssh-gpg.en.md
 ```
 
-Key config (already in `mkdocs.yml`):
-
-```yaml
-plugins:
-  - i18n:
-      docs_structure: suffix
-      reconfigure_material: true
-      languages:
-        - locale: ru
-          name: Русский
-          default: true
-          build: true
-        - locale: en
-          name: English
-          build: true
-```
+The site is configured so both languages are built and available in navigation.
 
 ---
 
 ## Writing guidelines
 
-* **Keep it practical.** Short intros, clear steps, real commands.
-* **Tone:** concise, a bit cheeky is fine, but stay respectful.
-* **Structure:** `# Title` → short context → `## Plan / Steps` → screenshots → result/summary.
-* **Code blocks:** prefer shell fenced blocks with language hints (`bash`, `powershell`, etc.).
-* **Links:** point to upstream docs (Arch Wiki, official repos) where helpful.
+* **Keep it practical.** Short intro, clear steps, real commands.
+* **Prefer structure.** Title → context → steps → screenshots → result.
+* **Use fenced code blocks** with language hints: `bash`, `fish`, `powershell`, `yaml`, etc.
+* **Prefer upstream links** when official documentation is useful.
+* **If you add a Russian article, add an English version too** when possible.
 
 ---
 
 ## Contributing
 
-PRs welcome:
+PRs are welcome.
 
-1. Create a feature branch.
-2. Add/modify Markdown under `docs/`.
-3. Include screenshots under `docs/images/...` (PNG/JPG; keep sizes reasonable).
-4. For English, add `*.en.md` siblings.
-5. Run `mkdocs serve`, verify both languages.
-6. Open a Pull Request.
+Basic flow:
+
+1. Create a branch.
+2. Add or update Markdown files under `docs/`.
+3. Put screenshots into `docs/images/...`.
+4. Keep the bilingual structure intact (`*.md` + `*.en.md` where applicable).
+5. Run `mkdocs serve`.
+6. Run `mkdocs build --strict`.
+7. Open a Pull Request.
 
 ---
 
 ## Repository layout
 
-```
-docs/           # source Markdown and images
-mkdocs.yml      # site configuration
-site/           # built static site (output)
+```text
+docs/             # source Markdown, translations, images, and CNAME
+  git/            # Git / SSH / GPG guides
+  os/             # OS-related guides
+  images/         # screenshots and illustrations
+mkdocs.yml        # MkDocs configuration
+requirements.txt  # pinned Python dependencies
+README.md         # this file
 ```
 
-> The `site/` folder is generated — keep it out of commits if you deploy elsewhere. For GitHub Pages via `gh-deploy`, it’s fine to let the action manage it.
+`site/` is a generated build artifact and should not be committed.
+
+---
+
+## Local notes
+
+A few useful details:
+
+* Python dependencies are installed strictly from `requirements.txt`.
+* `.venv/`, `site/`, `.cache/`, and `__pycache__/` are ignored.
+* The local dev server may occasionally show noisy warnings for paths like `sitemap.xml`; if the pages render correctly, that is usually not a real content issue.
 
 ---
 
 ## License
 
-Such a resource should be completely **unlicensed**! And accessible to **everyone**.
+Such a resource should be completely **unlicensed** — and accessible to **everyone**.
 
 ---
 

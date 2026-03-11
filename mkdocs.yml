@@ -40,6 +40,8 @@ nav:
       - Ventoy: os/ventoy.md
       - Установка Arch Linux: os/arch-install.md
       - Настройка Arch Linux: os/arch-setup.md
+  - Git и репозитории:
+      - SSH и GPG: git/ssh-gpg.md
 
 markdown_extensions:
   - admonition
@@ -73,6 +75,9 @@ plugins:
             Загрузочная флешка: Bootable USB
             Ventoy: Ventoy
             Установка Arch Linux: Install Arch Linux
+            Настройка Arch Linux: Arch Linux Setup
+            Git и репозитории: Git and repos
+            SSH и GPG: SSH and GPG
   - search
   - social
 

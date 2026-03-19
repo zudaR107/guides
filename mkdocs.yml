@@ -40,6 +40,7 @@ nav:
       - Ventoy: os/ventoy.md
       - Установка Arch Linux: os/arch-install.md
       - Настройка Arch Linux: os/arch-setup.md
+      - Установка и настройка CachyOS: os/cachyos-install.md
 
 markdown_extensions:
   - admonition
@@ -73,6 +74,8 @@ plugins:
             Загрузочная флешка: Bootable USB
             Ventoy: Ventoy
             Установка Arch Linux: Install Arch Linux
+            Настройка Arch Linux: Arch Linux Setup
+            Установка и настройка CachyOS: Installing and Setting Up CachyOS
   - search
   - social
 

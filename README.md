@@ -1,6 +1,6 @@
 # ZudaR Docs
 
-**Pragmatic tech guides & theory.** Installations, tooling, workflows, troubleshooting, security, and infrastructure — written in a no‑BS style, with screenshots and copy‑paste commands. Built with **MkDocs** + **Material for MkDocs**.
+**Pragmatic tech guides & theory.** Installations, tooling, workflows, troubleshooting, security, and infrastructure — written in a no-BS style, with screenshots and copy-paste commands. Built with **MkDocs** + **Material for MkDocs**.
 
 👉 Live site: **[https://docs.zudar.ru](https://docs.zudar.ru)**
 
@@ -10,7 +10,7 @@
 
 Current topics include:
 
-* **Operating Systems** — bootable USBs, Ventoy, Arch Linux installation and setup.
+* **Operating Systems** — bootable USBs, Ventoy, Arch Linux installation and setup, and CachyOS installation and setup.
 * **Git and repos** — SSH, GPG, repository workflow, and related setup.
 * **Bilingual content** — **Russian** is the default language, with **English** translations alongside it.
 
@@ -76,8 +76,14 @@ docs/
   index.md
   index.en.md
   os/
+    bootable-usb.md
+    bootable-usb.en.md
     arch-install.md
     arch-install.en.md
+    arch-setup.md
+    arch-setup.en.md
+    cachyos-install.md
+    cachyos-install.en.md
   git/
     ssh-gpg.md
     ssh-gpg.en.md

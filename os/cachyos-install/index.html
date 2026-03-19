@@ -1,0 +1,2054 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Гайды по ОС, Arch Linux и прочим радостям жизни">
+      
+      
+      
+        <link rel="canonical" href="https://docs.zudar.ru/os/cachyos-install/">
+      
+      
+        <link rel="prev" href="../arch-setup/">
+      
+      
+        <link rel="next" href="../../git/ssh-gpg/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="ru">
+        
+          <link rel="alternate" href="../../en/os/cachyos-install/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Установка и настройка CachyOS - ZudaR Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Установка и настройка CachyOS - ZudaR Docs" />
+<meta property="og:description" content="Гайды по ОС, Arch Linux и прочим радостям жизни" />
+<meta property="og:image" content="https://docs.zudar.ru/assets/images/social/os/cachyos-install.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.zudar.ru/os/cachyos-install/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Установка и настройка CachyOS - ZudaR Docs" />
+<meta property="twitter:description" content="Гайды по ОС, Arch Linux и прочим радостям жизни" />
+<meta property="twitter:image" content="https://docs.zudar.ru/assets/images/social/os/cachyos-install.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-cachyos" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="ZudaR Docs" class="md-header__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZudaR Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Установка и настройка CachyOS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Выберите язык">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/os/cachyos-install/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/zudaR107/guides" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ZudaR Docs" class="md-nav__button md-logo" aria-label="ZudaR Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZudaR Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/zudaR107/guides" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Операционные системы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Операционные системы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bootable-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Загрузочная флешка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ventoy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ventoy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Arch Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка и настройка CachyOS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка и настройка CachyOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 План работ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iso-ventoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💿 Скачиваем ISO и закидываем на Ventoy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🥾 Загружаемся с флешки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪞 Проблема с зеркалами: почему установка может внезапно пойти лесом
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🪞 Проблема с зеркалами: почему установка может внезапно пойти лесом">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Повторно ранжируем зеркала
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mirrorlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ищем проблемные зеркала в mirrorlist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Удаляем их из списков
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обновляем базы пакетов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cachyos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Установка CachyOS — шаг за шагом
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Установка CachyOS — шаг за шагом">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Язык системы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Запуск установщика
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-welcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Welcome / приветствие
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Клавиатура
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Загрузчик
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) Разметка диска
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-desktop-environment-window-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Выбор Desktop Environment / Window Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#niri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Почему именно Niri
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9) Список пакетов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10) Создание пользователя
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11) Итоги перед установкой
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12) Сама установка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13) Финал установки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚪 Первый запуск системы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Первая настройка после входа
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cachyos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Мои конфиги для CachyOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Мои конфиги для CachyOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как забрать репозиторий
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что умеет скрипт
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Если хотите всё настроить руками
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Если хотите всё настроить руками">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Обновляем систему и базы пакетов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cachyos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) По возможности берём пакеты из CachyOS‑репозиториев
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Мой набор нужных пакетов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Мой набор нужных пакетов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шрифты и база
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Повседневный софт
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разработка и отладка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Оболочка и безопасность
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        И ещё вот это
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-mono" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔤 Ставим шрифты Ubuntu Mono
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪟 Делаем дуалбут с Windows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🪟 Делаем дуалбут с Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-boot-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сначала проверяем, что Windows Boot Manager вообще существует
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcdefaultgrub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Затем правим /etc/default/grub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-prober-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверяем, что os-prober реально видит Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пересобираем конфиг GRUB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-gpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 SSH и 🔏 GPG
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Переносим конфиги вручную
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✨ Что получилось в итоге
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✨ Что получилось в итоге">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рабочий стол
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Лаунчер приложений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выключение
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Календарь
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Погода и настройки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потребление ресурсов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#btop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        btop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Уведомления
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-oss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code - OSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Консоль
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yazi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yazi — текстовый файловый менеджер
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nautilus-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nautilus — GUI файловый менеджер
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weathr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weathr — консольная погода
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asciiquarium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asciiquarium — постоянная рубрика
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мои клавиши
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ Где что настраивать в моих конфигах
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⌨️ Основные хоткеи моей системы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⌨️ Основные хоткеи моей системы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск приложений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Система и окна
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Навигация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Скриншоты и мультимедиа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Обновления и жизнь дальше
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Итог
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git и репозитории
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git и репозитории
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/ssh-gpg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH и GPG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/zudaR107/guides/edit/main/docs/os/cachyos-install.md" title="Редактировать страницу" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="5-cachyos">Операционные системы. Часть 5 — «Установка и настройка CachyOS» ⚡<a class="headerlink" href="#5-cachyos" title="Permanent link">&para;</a></h1>
+<p>В прошлых частях мы уже успели сделать две важные вещи: сначала собрали нормальную загрузочную флешку с <strong>Ventoy</strong>, а потом поставили и настроили <strong>Arch Linux</strong>. И вроде бы всё хорошо, всё «настоящим способом»… но потом приходит реальная жизнь, и ты понимаешь: иногда хочется не героически разгребать очередной конфликт конфигов, а просто <strong>сесть и пользоваться системой</strong>.</p>
+<p>Поэтому сегодня будет не очередной ритуал с «голым Арчем», а знакомство с <strong>CachyOS</strong> — <strong>Arch‑based</strong> системой, которая старается быть дружелюбнее к обычному человеку и при этом не превращается в тыкву. Почему я решил перейти на неё? Потому что я устал воевать с <strong>HyDE</strong>, чинить странные баги и в очередной раз ловить настроение «ну ща ещё пару часов поковыряю, и будет красиво». Хватит. Я выбрал быть счастливым 😌</p>
+<p>В этой статье снова пройдём путь <strong>от ISO до полностью настроенной системы</strong>: установка, подводные камни, зеркала, загрузчик, первый запуск, мои конфиги, базовый софт, дуалбут, шрифты, SSH/GPG и прочие радости взрослой линуксовой жизни.</p>
+<p>Данная статья обещает быть насыщенной. Очень.</p>
+<hr />
+<h2 id="_1">🧭 План работ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Скачаем <strong>CachyOS ISO</strong> и закинем его на флешку через <strong>Ventoy</strong>.</li>
+<li>Пройдём установщик шаг за шагом и не потеряем рассудок.</li>
+<li>Разберём неприятный момент с <strong>зеркалами</strong> и <code>pacman</code>.</li>
+<li>Выберем окружение рабочего стола и поговорим, почему я остановился на <strong>Niri</strong>.</li>
+<li>Сделаем первичную настройку системы после первого входа.</li>
+<li>Накатим мои конфиги или повторим все шаги вручную.</li>
+<li>Поставим базовый софт, шрифты, инструменты разработки и всё нужное для жизни.</li>
+<li>Добавим <strong>Windows в GRUB</strong>, если у вас дуалбут.</li>
+<li>Доведём систему до состояния «вот теперь красиво и <strong>работоспособно</strong>».</li>
+</ol>
+<hr />
+<h2 id="iso-ventoy">💿 Скачиваем ISO и закидываем на Ventoy<a class="headerlink" href="#iso-ventoy" title="Permanent link">&para;</a></h2>
+<p>Начинаем, как обычно, с <a href="https://cachyos.org">официального сайта <strong>CachyOS</strong></a>: скачиваем <strong>последний актуальный ISO‑образ</strong>. Это важно: если брать древнюю сборку, установщик потом с радостью скажет вам, что мир изменился, пакеты уехали, зеркала мутировали, а жить нужно по‑новому.</p>
+<p>После скачивания просто закидываем ISO на флешку с <strong>Ventoy</strong>.</p>
+<p><img alt="CachyOS Ventoy" src="../../images/os/cachyos-install/cachyos-ventoy.png" /></p>
+<blockquote>
+<p>Да, за это я и люблю Ventoy: не нужно каждый раз заново «прожигать» флешку. Просто кинул ISO как обычный файл — и пошёл дальше. Цивилизация всё‑таки существует.</p>
+</blockquote>
+<p>Если диск под систему у вас уже занят чем‑то старым и ненужным — очищаем его так же, как в прошлых частях. Подробно останавливаться на этом не буду.</p>
+<hr />
+<h2 id="_2">🥾 Загружаемся с флешки<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Дальше всё по классике:</p>
+<ol>
+<li>Перезагружаем ПК.</li>
+<li>Заходим в <strong>UEFI/BIOS</strong>.</li>
+<li>Ставим флешку на первое место в порядке загрузки.</li>
+<li>Загружаемся в <strong>CachyOS LiveISO</strong>.</li>
+</ol>
+<p>И вот тут нас ждёт маленький праздник: вместо унылой консоли нас встречает <strong>GUI‑установщик</strong>.</p>
+<p><img alt="CachyOS LiveCD" src="../../images/os/cachyos-install/live-cd.png" /></p>
+<p>Да, тру‑линуксоиды могут начать неодобрительно покашливать в углу. Но я, как уже говорил, <strong>выбрал быть счастливым</strong>. Консоль мы уже тыкали в Arch. Можно и на уровень выше подняться.</p>
+<hr />
+<h2 id="_3">🪞 Проблема с зеркалами: почему установка может внезапно пойти лесом<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Теперь о неприятном.</p>
+<p>Во время установки <strong>CachyOS</strong> ранжирует зеркала — то есть пытается выбрать самые быстрые и близкие. И сама идея хорошая. Но в моём случае в список стабильно попадали проблемные зеркала вроде <code>archlinux.gay</code> и иногда <code>yandex</code>, которые были недоступны с моей стороны. Итог — ошибки <code>pacman</code>, потерянное время, раздражение и вечное «ну почему опять именно сейчас?».</p>
+<p>Чтобы открыть терминал в LiveISO, жмём:</p>
+<div class="highlight"><pre><span></span><code>Ctrl<span class="w"> </span>+<span class="w"> </span>Alt<span class="w"> </span>+<span class="w"> </span>T
+</code></pre></div>
+<p><img alt="CachyOS Console" src="../../images/os/cachyos-install/console.png" /></p>
+<p>Если в процессе установки или подготовки системы вы ловите ошибки, связанные с зеркалами и <code>pacman</code>, можно сначала руками поправить ситуацию.</p>
+<h3 id="_4">Повторно ранжируем зеркала<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cachyos-rate-mirrors
+</code></pre></div>
+<h3 id="mirrorlist">Ищем проблемные зеркала в mirrorlist<a class="headerlink" href="#mirrorlist" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-RInE<span class="w"> </span><span class="s1">&#39;(archlinux\.gay|yandex)&#39;</span><span class="w"> </span>/etc/pacman.d<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</code></pre></div>
+<h3 id="_5">Удаляем их из списков<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/pacman.d/mirrorlist<span class="w"> </span>/etc/pacman.d/*mirrorlist*<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">continue</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>sudo<span class="w"> </span>grep<span class="w"> </span>-qE<span class="w"> </span><span class="s1">&#39;(archlinux\.gay|yandex)&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cleaning: </span><span class="nv">$f</span><span class="s2">&quot;</span>
+<span class="w">    </span>sudo<span class="w"> </span>cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">.bak&quot;</span>
+<span class="w">    </span>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;/archlinux\.gay/d;/yandex/d&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span>
+<span class="w">    </span>sudo<span class="w"> </span>grep<span class="w"> </span>-nE<span class="w"> </span><span class="s1">&#39;(archlinux\.gay|yandex)&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  -&gt; OK (no matches)&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div>
+<h3 id="_6">Обновляем базы пакетов<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syy
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>Это помогает <strong>для текущей Live‑сессии</strong>. Но сам установщик потом может снова переранжировать зеркала и снова затащить туда проблемные адреса.</p>
+<p>В моём случае я вообще прокидывал туннель на свой сервер, чтобы всё заработало нормально. Подробности этого цирка здесь расписывать не буду — у каждого сеть, ограничения и уровень терпения свои.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">UPD от 15.03.2026</p>
+<p>На момент написания обновления у меня эта проблема уже перестала проявляться так жёстко, и установка обычно шла без тоннеля. Но блок выше оставляю. Сегодня работает, завтра уже нет.</p>
+</div>
+<hr />
+<h2 id="cachyos">🛠️ Установка CachyOS — шаг за шагом<a class="headerlink" href="#cachyos" title="Permanent link">&para;</a></h2>
+<p>Теперь идём по самому установщику. Я покажу, что выбирал <strong>я</strong>, и попутно прокомментирую, где стоит подумать головой, а где можно смело жать «Далее».</p>
+<h3 id="1">1) Язык системы<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>В этот раз я решил поставить <strong>русский язык</strong> и проверить, насколько система вообще готова к такому сценарию. Раньше я почти всегда сидел на английском, но тут захотелось эксперимента.</p>
+<h3 id="2">2) Запуск установщика<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>Запускаем установщик прямо из LiveISO.</p>
+<h3 id="3-welcome">3) Welcome / приветствие<a class="headerlink" href="#3-welcome" title="Permanent link">&para;</a></h3>
+<p>Выбираем русский язык.</p>
+<p><img alt="Installer Welcome" src="../../images/os/cachyos-install/welcome.png" /></p>
+<h3 id="4-location">4) Location<a class="headerlink" href="#4-location" title="Permanent link">&para;</a></h3>
+<p>Я выставлял <strong>Европа → Москва</strong>. У вас, разумеется, должен быть <strong>ваш</strong> часовой пояс. Тут важно понимать: это просто настройки региона, формата дат и времени.</p>
+<p><img alt="Installer Location" src="../../images/os/cachyos-install/location.png" /></p>
+<h3 id="5">5) Клавиатура<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>Здесь я тоже выбрал русский, но, если честно, полностью это меня не спасло: часть вещей всё равно потом пришлось править уже в конфиге системы руками.</p>
+<p><img alt="Installer Keyboard" src="../../images/os/cachyos-install/keyboard.png" /></p>
+<h3 id="6">6) Загрузчик<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>Выбираю <strong>GRUB</strong>.</p>
+<p>Почему так:</p>
+<ul>
+<li><strong>GRUB</strong> — старый, понятный, переживший многое.</li>
+<li><strong>systemd-boot</strong> я пробовал, но быстро понял, что нормально и без лишней возни настроить через него дуалбут у меня не получается.</li>
+<li>Остальные варианты я либо не трогал, либо они мне просто не интересны.</li>
+</ul>
+<p>Итог: <strong>берём GRUB и живём спокойно</strong>.</p>
+<p><img alt="Installer Bootloader" src="../../images/os/cachyos-install/bootloader.png" /></p>
+<h3 id="7">7) Разметка диска<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>Я ставил систему на <strong>отдельный диск</strong>, который заранее очистил. Поэтому тут всё просто: выбираем диск, используем <strong>btrfs</strong>, идём дальше.</p>
+<p>Если вы ставите <strong>рядом с Windows на один диск</strong>, тут уже начинается взрослая жизнь. Скорее всего, понадобится <strong>Manual partitioning</strong>, и разработчики сами предупреждают, что автоматическая разметка в таком сценарии может сработать неидеально.</p>
+<p>Так что если у вас дуалбут на одном диске — <strong>не спешите</strong>, проверяйте всё внимательно и не надейтесь на «и так сойдёт». Оно может. Но может и нет.</p>
+<p><img alt="Installer Partitions" src="../../images/os/cachyos-install/partitions.png" /></p>
+<h3 id="8-desktop-environment-window-manager">8) Выбор Desktop Environment / Window Manager<a class="headerlink" href="#8-desktop-environment-window-manager" title="Permanent link">&para;</a></h3>
+<p>Вот здесь уже интересно.</p>
+<p>Вариантов много. Очень много.</p>
+<ul>
+<li>Хотите чего‑то старого, крепкого и проверенного? Можно брать <strong>i3</strong>.</li>
+<li>Хотите красивого и современного? Смотрите в сторону новых композиторов.</li>
+<li>Хотите страдать в богатом интерфейсе? Ну, для этого тоже всё предусмотрено 😏</li>
+</ul>
+<p>Лично у меня выбор был таким:</p>
+<ul>
+<li><strong>i3</strong> — люблю, пользовался долго, уважаю. Но это всё же X11, а мне хотелось окончательно ехать дальше.</li>
+<li><strong>Hyprland</strong> — уже был, уже проходили, уже достаточно. Красиво, эффектно, но в моём сценарии слишком часто приходилось разруливать конфликты и ловить странные поломки.</li>
+<li><strong>KDE / XFCE / GNOME</strong> — тут без войны, но честно: <strong>мне просто не нравится этот вайб</strong>. Тяжеловато, местами перегружено, местами некрасиво лично для меня. Если вам нравится — прекрасно. Но я пишу про свой сетап.</li>
+</ul>
+<p>В итоге я остановился на <strong>Niri</strong>.</p>
+<h3 id="niri">Почему именно Niri<a class="headerlink" href="#niri" title="Permanent link">&para;</a></h3>
+<p><strong>Niri</strong> — это не просто «ещё один тайловый менеджер окон». Это <strong>scrollable‑tiling Wayland compositor</strong> с очень приятной логикой работы:</p>
+<ul>
+<li>окна живут в колонках;</li>
+<li>рабочее пространство как будто тянется в ширину;</li>
+<li>новые окна не устраивают погром в уже открытой раскладке;</li>
+<li>навигация ощущается плавной и логичной;</li>
+<li>всё выглядит свежо, современно и без ощущения, что ты сидишь в музее оконных менеджеров.</li>
+</ul>
+<p>Что мне в нём понравилось:</p>
+<ul>
+<li><strong>предсказуемость</strong> — окна не прыгают как бешеные;</li>
+<li><strong>приятная работа с несколькими окнами</strong> на одном рабочем пространстве;</li>
+<li><strong>Wayland</strong> без желания немедленно пойти чинить полсистемы;</li>
+<li>хороший баланс между «минимализмом» и «это всё‑таки можно использовать каждый день».</li>
+</ul>
+<p>Из минусов:</p>
+<ul>
+<li>он не настолько привычен, как i3;</li>
+<li>некоторые вещи поначалу ощущаются непривычно после классических тайлинговых WM;</li>
+<li>всё равно придётся почитать конфиги и понять философию работы.</li>
+</ul>
+<p>Но в целом Niri очень быстро дал мне ощущение: <strong>вот это уже похоже на систему, с которой я реально хочу жить каждый день</strong>.</p>
+<p><img alt="Installer Desktop" src="../../images/os/cachyos-install/desktop.png" /></p>
+<h3 id="9">9) Список пакетов<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<p>На этом шаге можно сразу отметить дополнительные пакеты, которые хочется поставить во время установки. Я обычно часть добиваю потом руками — так понятнее, что именно попало в систему.</p>
+<p><img alt="Installer Packages" src="../../images/os/cachyos-install/packages.png" /></p>
+<h3 id="10">10) Создание пользователя<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<p>Здесь всё стандартно: имя пользователя, пароль, имя машины и так далее.</p>
+<p><img alt="Installer Users" src="../../images/os/cachyos-install/users.png" /></p>
+<h3 id="11">11) Итоги перед установкой<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>Вот этот экран <strong>обязательно читаем внимательно</strong>. Да, скучно. Да, хочется уже нажать «Установить». Но именно здесь проще всего заметить, что вы случайно выбрали не тот диск, не тот загрузчик или не ту раскладку.</p>
+<p><img alt="Installer Summary" src="../../images/os/cachyos-install/summary.png" /></p>
+<h3 id="12">12) Сама установка<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>Если всё настроили нормально, дальше установщик работает уже сам.</p>
+<p><img alt="CachyOS Install" src="../../images/os/cachyos-install/install_1.png" />
+<img alt="CachyOS Install" src="../../images/os/cachyos-install/install_2.png" /></p>
+<p>Если что‑то падает — без магии: смотрим логи, читаем ошибки, разбираемся по факту. Linux по‑другому не лечится. Обязательно перезагружаемся перед повторной попыткой установки (так завещали сами разработчики).</p>
+<h3 id="13">13) Финал установки<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>У меня установка занимала примерно <strong>около 30 минут</strong>, но тут всё зависит от интернета, зеркал, настроения пакетного менеджера и общего расположения звёзд.</p>
+<p><img alt="Install Complete" src="../../images/os/cachyos-install/install_done.png" /></p>
+<hr />
+<h2 id="_7">🚪 Первый запуск системы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>После установки:</p>
+<ol>
+<li>Перезагружаемся.</li>
+<li>Выбираем в UEFI загрузку через <strong>GRUB</strong>.</li>
+<li>Заходим в свою новенькую систему.</li>
+</ol>
+<p>Сразу скажу честно: мне понадобилось <strong>несколько перезагрузок</strong>, прежде чем всё заработало именно так, как я хотел. Так что если с первого раза не вышло — это не вы плохой, это просто Linux напоминает, что бесплатный сыр бывает только в командах <code>pacman -S</code>.</p>
+<hr />
+<h2 id="_8">🎨 Первая настройка после входа<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>После первого входа нас встречает базовая настройка окружения. У меня это выглядело так:</p>
+<ul>
+<li>включаем сбор статистики — да, я включил; пусть опенсорсные бедолаги тоже получают хоть немного данных;</li>
+<li>выбираем директорию с обоями;</li>
+<li>настраиваем цветовую схему;</li>
+<li>выбираем оформление панели, дока и прочих элементов интерфейса.</li>
+</ul>
+<p>Я остановился на <strong>светлой и тёплой теме Kanagawa</strong>.</p>
+<p><img alt="Start Hello" src="../../images/os/cachyos-install/hello.png" />
+<img alt="Start Wallpapers" src="../../images/os/cachyos-install/wallpapers.png" />
+<img alt="Start Theme" src="../../images/os/cachyos-install/theme.png" />
+<img alt="Start Bar" src="../../images/os/cachyos-install/bar.png" />
+<img alt="Start Dock" src="../../images/os/cachyos-install/dock.png" /></p>
+<p>В целом, всё это потом можно поменять через настройки в панели. Но, как обычно, есть и более быстрый путь: <strong>просто забрать мои конфиги</strong> и не изобретать велосипед, квадратное колесо и новую религию одновременно.</p>
+<hr />
+<h2 id="cachyos_1">📁 Мои конфиги для CachyOS<a class="headerlink" href="#cachyos_1" title="Permanent link">&para;</a></h2>
+<p>Я специально подготовил отдельный репозиторий с конфигами:</p>
+<p><strong><a href="https://github.com/zudaR107/cachyos-configs">https://github.com/zudaR107/cachyos-configs</a></strong></p>
+<p>Там уже лежит мой набор настроек под систему, плюс есть скрипт автоматической установки и первоначальной настройки.</p>
+<h3 id="_9">Как забрать репозиторий<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/Sandbox
+<span class="nb">cd</span><span class="w"> </span>~/Sandbox
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zudaR107/cachyos-configs
+<span class="nb">cd</span><span class="w"> </span>cachyos-configs
+</code></pre></div>
+<h3 id="_10">Что умеет скрипт<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>./scripts/install.sh<span class="w"> </span>--help
+./scripts/install.sh<span class="w"> </span>--dry-run
+./scripts/install.sh<span class="w"> </span>--backup-dir<span class="w"> </span>&lt;path&gt;
+</code></pre></div>
+<p>Где:</p>
+<ul>
+<li><code>--help</code> — посмотреть справку;</li>
+<li><code>--dry-run</code> — увидеть, что будет сделано, <strong>без реального применения</strong>;</li>
+<li><code>--backup-dir &lt;path&gt;</code> — переопределить путь, куда будут сохранены текущие конфиги перед заменой.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>Если словили ошибку — сперва попробуйте понять и поправить её сами. А потом напишите мне, чтобы я смог обновить репозиторий и сделать всё лучше для следующих людей. Коллективное страдание — база open source.</p>
+</div>
+<hr />
+<h2 id="_11">🔧 Если хотите всё настроить руками<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>Скрипт — это удобно. Но если вы хотите полностью понимать, что и зачем меняется в системе, ниже продублирую основные шаги в более ручном режиме.</p>
+<h3 id="1_1">1) Обновляем систему и базы пакетов<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu
+</code></pre></div>
+<p>Если нужно <strong>принудительно заново скачать базы</strong>, используйте:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syyu
+</code></pre></div>
+<p>Полезные команды на каждый день:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>&lt;имя_пакета&gt;<span class="w">    </span><span class="c1"># установить пакет</span>
+pacman<span class="w"> </span>-Ss<span class="w"> </span>&lt;имя_пакета&gt;<span class="w">        </span><span class="c1"># поиск по репозиториям</span>
+yay<span class="w"> </span>&lt;имя_пакета&gt;<span class="w">               </span><span class="c1"># поиск/установка через AUR</span>
+man<span class="w"> </span>&lt;команда&gt;<span class="w">                  </span><span class="c1"># документация</span>
+&lt;команда&gt;<span class="w"> </span>--help<span class="w">               </span><span class="c1"># краткая справка</span>
+</code></pre></div>
+<blockquote>
+<p>Я стараюсь обновлять систему почти каждый день и перестал бояться rolling release. Стало легче жить. Главное — не запускать обновления в 3 ночи перед важной работой. Хотя… кого я обманываю.</p>
+</blockquote>
+<h3 id="2-cachyos">2) По возможности берём пакеты из CachyOS‑репозиториев<a class="headerlink" href="#2-cachyos" title="Permanent link">&para;</a></h3>
+<p>Если пакет есть в <code>cachyos-*</code>, часто там он будет свежее, чем в стандартных репозиториях. Это не значит «всегда бездумно ставим всё оттуда», но смотреть туда имеет смысл.</p>
+<hr />
+<h2 id="_12">📦 Мой набор нужных пакетов<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>Ниже — не «объективно лучший список для всего человечества», а <strong>мой рабочий набор</strong>, с которым я живу, пишу код, копаюсь в железках и не чувствую себя голым.</p>
+<h3 id="_13">Шрифты и база<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ttf-ubuntu-font-family</strong> — базовые Ubuntu‑шрифты для нормального внешнего вида системы.</li>
+<li><strong>ttf-ubuntu-mono-nerd</strong> — мой любимый моноширинный шрифт для терминала, редактора и красивых иконок в prompt.</li>
+<li><strong>yay</strong> — AUR‑хелпер. Без него на Arch‑based системах жить можно, но зачем.</li>
+<li><strong>rsync</strong> — нормальное копирование файлов и конфигов. Когда надо аккуратно синхронизировать директории, а не просто махнуть <code>cp -a</code> и надеяться на лучшее.</li>
+</ul>
+<h3 id="_14">Повседневный софт<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>telegram-desktop</strong> — Telegram. Тут без комментариев.</li>
+<li><strong>onlyoffice-bin</strong> — офисный пакет. Для тех случаев, когда документы всё ещё существуют.</li>
+<li><strong>zip / unzip</strong> — ZIP‑архивы. Основа основ.</li>
+<li><strong>unarchiver</strong> — <code>unar</code> / <code>lsar</code> для распаковки всякого экзотического добра.</li>
+<li><strong>pwgen</strong> — генератор паролей.</li>
+<li><strong>tree</strong> — красиво показать дерево файлов и почувствовать контроль над проектом.</li>
+<li><strong>fastfetch</strong> — быстрый системный summary в терминале.</li>
+<li><strong>onefetch</strong> — почти fastfetch, но для git‑репозиториев.</li>
+<li><strong>wlsunset</strong> — тёплый оттенок экрана вечером. Глаза спасибо скажут.</li>
+<li><strong>cliphist</strong> — история буфера обмена. Один раз привыкаешь — назад уже не хочется.</li>
+<li><strong>yazi</strong> — очень приятный консольный файловый менеджер.</li>
+<li><strong>ex-vi-compat</strong> — маленькая, но полезная совместимость со старыми <code>vi</code>‑привычками.</li>
+<li><strong>neovim</strong> — ну а вдруг захочется открыть что‑то быстро и почувствовать себя элитой.</li>
+</ul>
+<h3 id="_15">Разработка и отладка<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>code</strong> — Code - OSS / VS Code‑подобный редактор. Мой основной GUI‑редактор.</li>
+<li><strong>qtcreator</strong> — Qt Creator. Для C++/Qt‑проектов незаменим.</li>
+<li><strong>lldb</strong> — отладчик.</li>
+<li><strong>bear</strong> — генерация <code>compile_commands.json</code> для C/C++ проектов.</li>
+<li><strong>arm-none-eabi-gcc</strong> — компилятор под ARM Cortex‑M.</li>
+<li><strong>arm-none-eabi-gdb</strong> — GDB для ARM.</li>
+<li><strong>arm-none-eabi-binutils</strong> — binutils под ARM.</li>
+<li><strong>arm-none-eabi-newlib</strong> — стандартная библиотека для embedded‑сборок.</li>
+<li><strong>picocom</strong> — минималистичный терминал для COM/UART.</li>
+<li><strong>openocd</strong> — прошивка и отладка микроконтроллеров.</li>
+<li><strong>stlink</strong> — инструменты под ST‑Link.</li>
+<li><strong>jlink</strong> — инструменты под SEGGER J‑Link.</li>
+<li><strong>stm32cubemx</strong> — генерация проекта и инициализации для STM32.</li>
+<li><strong>stm32cubeprog</strong> — прошивка STM32.</li>
+<li><strong>stm32cubeide</strong> — IDE от ST, если хочется иногда жить и так.</li>
+</ul>
+<h3 id="_16">Оболочка и безопасность<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>gnupg</strong> — GPG для подписи коммитов.</li>
+<li><strong>pinentry</strong> — ввод пароля для GPG без боли.</li>
+<li><strong>starship</strong> — красивый и быстрый prompt.</li>
+</ul>
+<h3 id="_17">И ещё вот это<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>___</strong> — поняли, да? 😏</li>
+</ul>
+<hr />
+<h2 id="ubuntu-mono">🔤 Ставим шрифты Ubuntu Mono<a class="headerlink" href="#ubuntu-mono" title="Permanent link">&para;</a></h2>
+<p>Если шрифты не приехали сразу или хотите просто убедиться, что всё на месте:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Sy<span class="w"> </span>--needed<span class="w"> </span>ttf-ubuntu-font-family<span class="w"> </span>ttf-ubuntu-mono-nerd
+fc-cache<span class="w"> </span>-f
+fc-list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;Ubuntu Mono&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</code></pre></div>
+<p>Где:</p>
+<ul>
+<li>первая команда — ставит нужные шрифты;</li>
+<li><code>fc-cache -f</code> — обновляет кеш шрифтов;</li>
+<li><code>fc-list | grep</code> — позволяет быстро проверить, что система шрифты реально видит.</li>
+</ul>
+<hr />
+<h2 id="windows">🪟 Делаем дуалбут с Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<p>Если рядом стоит <strong>Windows</strong>, её обычно нужно явно подцепить в <strong>GRUB</strong> через <code>os-prober</code>.</p>
+<h3 id="windows-boot-manager">Сначала проверяем, что Windows Boot Manager вообще существует<a class="headerlink" href="#windows-boot-manager" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>efibootmgr<span class="w"> </span>-v<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;Windows&quot;</span><span class="w"> </span>-n<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="etcdefaultgrub">Затем правим <code>/etc/default/grub</code><a class="headerlink" href="#etcdefaultgrub" title="Permanent link">&para;</a></h3>
+<p>Добавляем или раскомментируем строку:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">GRUB_DISABLE_OS_PROBER</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<h3 id="os-prober-windows">Проверяем, что <code>os-prober</code> реально видит Windows<a class="headerlink" href="#os-prober-windows" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>os-prober
+</code></pre></div>
+<h3 id="grub">Пересобираем конфиг GRUB<a class="headerlink" href="#grub" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grub-mkconfig<span class="w"> </span>-o<span class="w"> </span>/boot/grub/grub.cfg
+</code></pre></div>
+<p>После этого перезагружаемся — и в меню <strong>GRUB</strong> должен появиться пункт с Windows.</p>
+<blockquote>
+<p>В моём случае этого хватило. Если у вас не хватило — значит, пора смотреть в сторону конкретной разметки диска, EFI‑раздела и того, что именно вы успели сделать с загрузчиком до этого.</p>
+</blockquote>
+<hr />
+<h2 id="ssh-gpg">🔑 SSH и 🔏 GPG<a class="headerlink" href="#ssh-gpg" title="Permanent link">&para;</a></h2>
+<p>Эту часть я вынес в отдельную подробную статью, чтобы не превращать текущую в энциклопедию всех земных страданий:</p>
+<p><strong><a href="https://docs.zudar.ru/git/ssh-gpg/">https://docs.zudar.ru/git/ssh-gpg/</a></strong></p>
+<p>Там отдельно разобраны:</p>
+<ul>
+<li>генерация <strong>SSH‑ключей</strong>;</li>
+<li>настройка <strong>ssh-agent</strong>;</li>
+<li>создание и подключение <strong>GPG‑ключа</strong>;</li>
+<li>настройка <strong>Git</strong> для подписанных коммитов.</li>
+</ul>
+<hr />
+<h2 id="_18">🧩 Переносим конфиги вручную<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>Если не используете скрипт и хотите руками перенести настройки, просто забираем нужные файлы из репозитория и раскладываем их по <code>~/.config/</code>.</p>
+<p>Смотрите внимательно, что именно копируете: я старался всё документировать, но <strong>слепо перетаскивать весь репозиторий поверх своей системы я всё равно не советую</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>Обязательно замените все абсолютные пути вида <code>/home/zudar/</code> на <strong>свои собственные</strong>. Иначе часть настроек будет ссылаться в пустоту, а вы потом будете удивляться, почему что‑то «магически не работает».</p>
+</div>
+<hr />
+<h2 id="_19">✨ Что получилось в итоге<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>И вот после всех этих действий система уже выглядит не как «ну поставил Linux, и что теперь», а как <strong>реально красивая и удобная рабочая среда</strong>.</p>
+<h3 id="_20">Рабочий стол<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p><img alt="Desktop" src="../../images/os/cachyos-install/mydesktop.png" /></p>
+<h3 id="_21">Лаунчер приложений<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p><img alt="Launcher" src="../../images/os/cachyos-install/launcher.png" /></p>
+<h3 id="_22">Выключение<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p><img alt="Shut Down" src="../../images/os/cachyos-install/shut-down.png" /></p>
+<h3 id="_23">Календарь<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p><img alt="Calendar" src="../../images/os/cachyos-install/calendar.png" /></p>
+<h3 id="_24">Погода и настройки<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p><img alt="Settings" src="../../images/os/cachyos-install/weather_1.png" /></p>
+<h3 id="_25">Потребление ресурсов<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p><img alt="System" src="../../images/os/cachyos-install/system.png" /></p>
+<h3 id="btop"><code>btop</code><a class="headerlink" href="#btop" title="Permanent link">&para;</a></h3>
+<p><img alt="Btop" src="../../images/os/cachyos-install/btop.png" /></p>
+<h3 id="_26">Уведомления<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p><img alt="Notification" src="../../images/os/cachyos-install/notification.png" /></p>
+<h3 id="code-oss">Code - OSS<a class="headerlink" href="#code-oss" title="Permanent link">&para;</a></h3>
+<p><img alt="Code" src="../../images/os/cachyos-install/code_theme.png" /></p>
+<h3 id="_27">Консоль<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p><img alt="Console" src="../../images/os/cachyos-install/myconsole.png" /></p>
+<h3 id="yazi">Yazi — текстовый файловый менеджер<a class="headerlink" href="#yazi" title="Permanent link">&para;</a></h3>
+<p><img alt="Yazi" src="../../images/os/cachyos-install/yazi.png" /></p>
+<h3 id="nautilus-gui">Nautilus — GUI файловый менеджер<a class="headerlink" href="#nautilus-gui" title="Permanent link">&para;</a></h3>
+<p><img alt="Nautilus" src="../../images/os/cachyos-install/nautilus.png" /></p>
+<h3 id="weathr">Weathr — консольная погода<a class="headerlink" href="#weathr" title="Permanent link">&para;</a></h3>
+<p><img alt="Weathr" src="../../images/os/cachyos-install/weathr.png" /></p>
+<h3 id="asciiquarium">Asciiquarium — постоянная рубрика<a class="headerlink" href="#asciiquarium" title="Permanent link">&para;</a></h3>
+<p><img alt="Asciiquarium" src="../../images/os/cachyos-install/asciiquarium.png" /></p>
+<h3 id="_28">Мои клавиши<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p><img alt="Keybindings" src="../../images/os/cachyos-install/keybindings.png" /></p>
+<p>Да, вот такую красоту мы в итоге и получаем. И это уже тот случай, когда систему действительно хочется открыть просто потому, что <strong>она приятная</strong>.</p>
+<hr />
+<h2 id="_29">🗂️ Где что настраивать в моих конфигах<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>Ниже — краткая карта по основным файлам, чтобы потом не искать нужный параметр методом научного тыка.</p>
+<ul>
+<li><strong><code>alacritty/alacritty.toml</code></strong> — настройки терминала Alacritty: шрифт, размер текста, цвета, прозрачность, отступы, размеры окна, курсор, скролл и горячие клавиши.</li>
+<li><strong><code>fish/config.fish</code></strong> — главный конфиг Fish: алиасы, сокращения, запуск <code>ssh-agent</code>, инициализация Starship, <code>fzf</code> и прочих полезностей.</li>
+<li><strong><code>fish/functions/</code></strong> — отдельные пользовательские функции Fish: быстрые переходы, обёртки для <code>yazi</code>, <code>duf</code> и прочего.</li>
+<li><strong><code>fish/hyde_config.fish</code></strong> — базовые переменные окружения, в первую очередь XDG‑пути.</li>
+<li><strong><code>starship/starship.toml</code></strong> — внешний вид shell prompt: git‑ветка, языки, статус команды, время и всё остальное.</li>
+<li><strong><code>fastfetch/config.jsonc</code></strong> — оформление <code>fastfetch</code>: какие данные показывать и как именно.</li>
+<li><strong><code>niri/config.kdl</code></strong> — главная точка входа для конфига Niri.</li>
+<li><strong><code>niri/cfg/input.kdl</code></strong> — раскладки, тачпад, мышь, NumLock, поведение ввода.</li>
+<li><strong><code>niri/cfg/keybinds.kdl</code></strong> — основные горячие клавиши.</li>
+<li><strong><code>niri/cfg/layout.kdl</code></strong> — отступы, ширина колонок, поведение раскладки.</li>
+<li><strong><code>niri/cfg/misc.kdl</code></strong> — переменные окружения для Wayland / Qt / Electron и другие дополнительные параметры.</li>
+<li><strong><code>noctalia/settings.json</code></strong> — настройки оболочки Noctalia: панель, лаунчер, центр управления, уведомления, виджеты, обои и поведение интерфейса.</li>
+<li><strong><code>noctalia/colors.json</code></strong> — цветовая схема Noctalia.</li>
+<li><strong><code>noctalia/plugins.json</code></strong> — плагины Noctalia.</li>
+<li><strong><code>gtk-3.0/settings.ini</code></strong> и <strong><code>gtk-4.0/settings.ini</code></strong> — тема GTK‑приложений, иконки, курсор, базовый шрифт.</li>
+<li><strong><code>qt5ct/qt5ct.conf</code></strong> и <strong><code>qt6ct/qt6ct.conf</code></strong> — внешний вид Qt‑приложений.</li>
+<li><strong><code>Code - OSS/settings.jsonc</code></strong> — шрифт, тема, поведение редактора, терминал и прочее.</li>
+<li><strong><code>Code - OSS/extensions.txt</code></strong> — список используемых расширений.</li>
+<li><strong><code>Firefox/user.js</code></strong> — пользовательские настройки Firefox: приватность, телеметрия, стартовая страница, PDF viewer и др.</li>
+<li><strong><code>Firefox/extensions.txt</code></strong> — список расширений Firefox.</li>
+<li><strong><code>vim/vimrc</code></strong> — главный пользовательский конфиг Vim.</li>
+<li><strong><code>vim/hyde.vim</code></strong> — базовые настройки Vim под текущее окружение.</li>
+<li><strong><code>vim/colors/wallbash.vim</code></strong> — используемая цветовая схема.</li>
+<li><strong><code>scripts/bootstrap.sh</code></strong> — интерактивный скрипт первоначальной настройки: пакеты, шрифты, SSH/GPG, Git, перенос конфигов и т. д.</li>
+</ul>
+<p>Если хочется покрутить что‑то именно в поведении оконного менеджера — почти всегда смотреть нужно в:</p>
+<ul>
+<li><code>niri/cfg/keybinds.kdl</code></li>
+<li><code>niri/cfg/input.kdl</code></li>
+<li><code>niri/cfg/layout.kdl</code></li>
+</ul>
+<hr />
+<h2 id="_30">⌨️ Основные хоткеи моей системы<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Mod</strong> = клавиша Win / Super.</p>
+</blockquote>
+<h3 id="_31">Запуск приложений<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mod + Return</strong> — открыть Alacritty</li>
+<li><strong>Mod + W</strong> — открыть Firefox</li>
+<li><strong>Mod + C</strong> — открыть Code - OSS</li>
+<li><strong>Mod + E</strong> — открыть Nautilus</li>
+<li><strong>Mod + Space</strong> — открыть лаунчер приложений</li>
+</ul>
+<h3 id="_32">Система и окна<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mod + L</strong> — заблокировать экран</li>
+<li><strong>Mod + Q</strong> — закрыть окно</li>
+<li><strong>Mod + F</strong> — fullscreen</li>
+<li><strong>Mod + T</strong> — floating‑режим</li>
+<li><strong>Mod + O</strong> — открыть overview</li>
+<li><strong>Mod + Tab</strong> — предыдущий рабочий стол</li>
+</ul>
+<h3 id="_33">Навигация<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mod + Left / Mod + H</strong> — перейти влево</li>
+<li><strong>Mod + Right</strong> — перейти вправо</li>
+<li><strong>Mod + Up / Mod + K</strong> — перейти вверх</li>
+<li><strong>Mod + Down / Mod + J</strong> — перейти вниз</li>
+<li><strong>Mod + 1…9</strong> — перейти на рабочий стол 1…9</li>
+<li><strong>Mod + Alt + 1…9</strong> — переместить окно на рабочий стол 1…9</li>
+</ul>
+<h3 id="_34">Скриншоты и мультимедиа<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mod + P</strong> — сделать скриншот</li>
+<li><strong>XF86AudioRaiseVolume / XF86AudioLowerVolume</strong> — громкость</li>
+<li><strong>XF86AudioMute</strong> — выключить звук</li>
+<li><strong>XF86AudioMicMute</strong> — выключить микрофон</li>
+<li><strong>XF86AudioPlay / XF86AudioPause</strong> — play / pause</li>
+<li><strong>XF86AudioNext / XF86AudioPrev</strong> — следующий / предыдущий трек</li>
+<li><strong>XF86MonBrightnessUp / XF86MonBrightnessDown</strong> — яркость</li>
+</ul>
+<hr />
+<h2 id="_35">🔄 Обновления и жизнь дальше<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
+<p>Не стесняемся обновляться:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu
+</code></pre></div>
+<p>И да, я действительно советую делать это <strong>регулярно</strong>.</p>
+<p>Пока что каких‑то критических проблем в CachyOS я у себя не обнаружил. А если что‑то и находил — обычно решал в тот же вечер. По сравнению с моим прошлым сетапом это уже звучит почти как идеал.</p>
+<hr />
+<h2 id="_36">🏁 Итог<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<p>Вот так мы и получаем <strong>более дружелюбную систему для обычного пользователя</strong>, но без ощущения, что нас совсем уж лишили контроля над машиной.</p>
+<p>У нас на руках:</p>
+<ul>
+<li>современная <strong>Arch‑based</strong> система;</li>
+<li>удобный GUI‑установщик;</li>
+<li>рабочий <strong>GRUB</strong>;</li>
+<li><strong>Niri</strong> как приятный и современный Wayland‑композитор;</li>
+<li>настроенные шрифты, пакеты, конфиги и рабочая среда;</li>
+<li>возможность жить дальше без постоянного желания что‑то срочно чинить.</li>
+</ul>
+<p>Лично для меня <strong>CachyOS</strong> оказался той самой точкой, где можно всё ещё получать удовольствие от Linux, но уже без постоянного ритуального самобичевания.</p>
+<p>Если у вас будут вопросы — пишите мне. Если найдёте косяк в конфиге — тем более пишите. Если всё поставилось с первого раза — поздравляю, вы либо очень удачливы, либо просто сделали всё аккуратно и не пытались сломать систему раньше времени 😄</p>
+<p>Всем мира, быстрых зеркал и рабочих систем 🖤</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/vrubovoy" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/zudaR107" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

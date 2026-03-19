@@ -8,5 +8,7 @@
     - [Часть 2. Ventoy](os/ventoy.md)
     - [Часть 3. Установка Arch Linux](os/arch-install.md)
     - [Часть 4. Настройка Arch Linux](os/arch-setup.md)
+    - [Часть 5. Установка и настройка CachyOS](os/cachyos-install.md)
 - **Git и репозитории**
     - [Часть 1. SSH и GPG](git/ssh-gpg.md)
+

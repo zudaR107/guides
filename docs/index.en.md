@@ -4,9 +4,11 @@ A series of practical guides and theory notes on OSes, Arch Linux, and other use
 Below are sections and fresh materials.
 
 - **Operating Systems**
-    - [Part 1. Bootable USB](os/bootable-usb.md)
-    - [Part 2. Ventoy](os/ventoy.md)
-    - [Part 3. Installing Arch Linux](os/arch-install.md)
-    - [Part 4. Arch Linux Setup](os/arch-setup.md)
+    - [Part 1. Bootable USB](os/bootable-usb.en.md)
+    - [Part 2. Ventoy](os/ventoy.en.md)
+    - [Part 3. Installing Arch Linux](os/arch-install.en.md)
+    - [Part 4. Arch Linux Setup](os/arch-setup.en.md)
+    - [Part 5. Installing and Setting Up CachyOS](os/cachyos-install.en.md)
 - **Git and repos**
     - [Part 1. SSH and GPG](git/ssh-gpg.en.md)
+

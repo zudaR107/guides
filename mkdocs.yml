@@ -40,6 +40,7 @@ nav:
       - Ventoy: os/ventoy.md
       - Установка Arch Linux: os/arch-install.md
       - Настройка Arch Linux: os/arch-setup.md
+      - Установка и настройка CachyOS: os/cachyos-install.md
   - Git и репозитории:
       - SSH и GPG: git/ssh-gpg.md
 
@@ -76,6 +77,7 @@ plugins:
             Ventoy: Ventoy
             Установка Arch Linux: Install Arch Linux
             Настройка Arch Linux: Arch Linux Setup
+            Установка и настройка CachyOS: Installing and Setting Up CachyOS
             Git и репозитории: Git and repos
             SSH и GPG: SSH and GPG
   - search
